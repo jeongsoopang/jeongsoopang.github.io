@@ -2,6 +2,8 @@
 layout: home
 author_profile: true
 entries_layout: list
+sidebar:
+  nav: "sidebar"
 ---
 
 # Recent posts
