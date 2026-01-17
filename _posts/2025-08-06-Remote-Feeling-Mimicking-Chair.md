@@ -6,8 +6,8 @@ tags: [robotics, stewart-platform, design-expo]
 ---
 
 ![Expo photo of dual-chair haptic system](/assets/images/expo.jpg)
-Remote Feeling Mimicking Chair
 
+Remote Feeling Mimicking Chair
 (Low-Latency Dual-Chair Haptic Teleoperation)
 
 ## Overview
@@ -27,7 +27,7 @@ The system synchronizes tilt (pitch/roll) and vibration with sub-10 ms end-to-en
 
 This project presents dual-chair haptic teleoperation system that reproduces both tilt (pitch/roll) and vibration of a remote operator’s seat in real time. 
 
-Three-actuator Stewart-inspired platform driven by 24V DC linear actuators achieves a ±15° motion range and ~84 mm/s actuation speed. A 6-axis IMU (ICM-45686) mounted on the source chair streams motion data over Bluetooth Low Energy (BLE) with sub-10 ms latency to an ESP32 controller, which performs real-time inverse-kinematics control via BTS7960 PWM drivers A multi-threaded FreeRTOS firmware handles IMU sampling, BLE communication, and actuator feedback in parallel, enabling smooth motion transitions with negligible delay. Experimental validation at the 2025 SJTU Design Expo** confirmed stable operation.
+Three-actuator Stewart-inspired platform driven by 24V DC linear actuators achieves a ±15° motion range and ~84 mm/s actuation speed. A 6-axis IMU (ICM-45686) mounted on the source chair streams motion data over Bluetooth Low Energy (BLE) with sub-10 ms latency to an ESP32 controller, which performs real-time inverse-kinematics control via BTS7960 PWM drivers A multi-threaded FreeRTOS firmware handles IMU sampling, BLE communication, and actuator feedback in parallel, enabling smooth motion transitions with negligible delay. Experimental validation at the 2025 SJTU Design Expo confirmed stable operation.
 
 ---
 
@@ -55,7 +55,8 @@ The whole system weighs under 20 kg and can be assembled in less than 45 minutes
 
 ## Mechanical Design and Kinematics
 
-The mechanical platform is triangular and symmetric, with actuators mounted at 0°, 120°, and 240.  
+The mechanical platform is triangular and symmetric, with actuators mounted at 0°, 120°, and 240. 
+
 This balances torque loads, reduces coupling, and simplifies equations (3 actuators instead of a full 6-DOF Stewart), while retaining realistic 2-DOF tilt.
 
 ### Key Structural Highlights
@@ -66,7 +67,8 @@ This balances torque loads, reduces coupling, and simplifies equations (3 actuat
 - **Geometry:** Equilateral triangle base, side length 540 mm  
 - **Center height:** 230 mm (rest), varies up to ±45 mm during tilt  
 
-Finite Element Analysis (FEA) showed maximum deformation 0.47 mm at 800 N load with Von Mises stress 42.3 MPa, below aluminum yield (~275 MPa).  
+Finite Element Analysis (FEA) showed maximum deformation 0.47 mm at 800 N load with Von Mises stress 42.3 MPa, below aluminum yield (~275 MPa). 
+
 Safety factor > 3.1 under full tilt + payload.
 
 The inverse kinematics maps desired Euler angles to actuator lengths using precomputed lookup tables updated at 200 Hz, reducing onboard compute load.
