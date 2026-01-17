@@ -1,31 +1,42 @@
+# -------------------------------------------------------------------
 # Site
+# -------------------------------------------------------------------
 lang: en
 locale: en-US
 title: "Jeongsoo's Blog"
 description: "Robotics / UAV / AI notes, projects, and life logs."
-url: "https://jeongsoopang.github.io"   # CHANGE if you use a custom domain
-baseurl: ""                             # keep empty for <username>.github.io
+url: "https://jeongsoopang.github.io"
+baseurl: ""   # keep empty for <username>.github.io
 
-# Theme
-remote_theme: "mmistakes/minimal-mistakes@4.26.2"
-minimal_mistakes_skin: "default"        # keep the clean white look
+# -------------------------------------------------------------------
+# Theme (USE GEM THEME, NOT remote_theme)
+# -------------------------------------------------------------------
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "default"
 
-# Build
+# -------------------------------------------------------------------
+# Build settings
+# -------------------------------------------------------------------
 markdown: kramdown
 permalink: /:categories/:title/
 paginate: 5
 paginate_path: /page:num/
 
+# -------------------------------------------------------------------
+# Plugins
+# -------------------------------------------------------------------
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-include-cache
 
+# -------------------------------------------------------------------
 # Author (left profile card)
+# -------------------------------------------------------------------
 author:
   name: "Jeongsoo Pang"
-  avatar: "/assets/images/profile.jpg"  # put your photo here
+  avatar: "/assets/images/profile.jpg"
   bio: "AI / Robotics / UAV"
   location: "Shanghai - Korea"
   links:
@@ -42,20 +53,23 @@ author:
       icon: "fas fa-fw fa-envelope"
       url: "mailto:jeongsoopang@gmail.com"
 
+# -------------------------------------------------------------------
 # Defaults
+# -------------------------------------------------------------------
 defaults:
+  # Posts
   - scope:
       path: ""
       type: posts
     values:
       layout: single
       author_profile: true
-      sidebar:
-        nav: "sidebar"
       read_time: true
       comments: false
       share: false
       related: true
+
+  # Pages
   - scope:
       path: ""
       type: pages
@@ -63,7 +77,9 @@ defaults:
       layout: single
       author_profile: true
 
-# Navigation
+# -------------------------------------------------------------------
+# Pages collection
+# -------------------------------------------------------------------
 collections:
   pages:
     output: true
@@ -71,7 +87,9 @@ collections:
 include:
   - _pages
 
-# Exclude
+# -------------------------------------------------------------------
+# Exclude from build
+# -------------------------------------------------------------------
 exclude:
   - README.md
   - Gemfile
