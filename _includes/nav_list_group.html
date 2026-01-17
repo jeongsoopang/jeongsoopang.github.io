@@ -1,5 +1,6 @@
 {%- comment -%}
-  Override group nav list to show counts too.
+Override Minimal Mistakes nav_list_group to show category post counts in the sidebar nav.
+Works with site.data.navigation.sidebar structure (groups with children).
 {%- endcomment -%}
 
 {%- assign nav = include.nav | default: "sidebar" -%}
@@ -14,15 +15,16 @@
       {%- if group.children -%}
         <ul>
           {%- for item in group.children -%}
-            <li>
-              {%- assign cnt = nil -%}
-              {%- if item.url contains '/categories/' and item.url contains '#' -%}
-                {%- assign cat_key = item.url | split:'#' | last | downcase -%}
-                {%- if site.categories[cat_key] -%}
-                  {%- assign cnt = site.categories[cat_key] | size -%}
-                {%- endif -%}
-              {%- endif -%}
+            {%- assign cnt = nil -%}
 
+            {%- if item.url and item.url contains '/categories/' and item.url contains '#' -%}
+              {%- assign cat_key = item.url | split:'#' | last | downcase -%}
+              {%- if site.categories[cat_key] -%}
+                {%- assign cnt = site.categories[cat_key] | size -%}
+              {%- endif -%}
+            {%- endif -%}
+
+            <li>
               <a href="{{ item.url | relative_url }}">
                 {{ item.title }}
                 {%- if cnt != nil -%}
