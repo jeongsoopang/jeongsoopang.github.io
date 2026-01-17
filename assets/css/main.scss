@@ -4,8 +4,13 @@
 
 @import "minimal-mistakes";
 
-/* Expand main content width */
-.page__content {
-  max-width: 1100px;
+/* Expand content width (Minimal Mistakes) */
+.layout--single .page__inner-wrap {
+  max-width: 1200px;   /* try 1100~1300 */
 }
+
+.layout--home .page__inner-wrap {
+  max-width: 1200px;
+}
+
 
