@@ -26,8 +26,8 @@ plugins:
 author:
   name: "Jeongsoo Pang"
   avatar: "/assets/images/profile.jpg"  # put your photo here
-  bio: "ML / DL / Robotics / UAV / AI"
-  location: "Shanghai - South Korea"
+  bio: "AI / Robotics / UAV"
+  location: "Shanghai - Korea"
   links:
     - label: "Blog's Home"
       icon: "fas fa-fw fa-home"
