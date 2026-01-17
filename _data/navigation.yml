@@ -1,0 +1,31 @@
+main:
+  - title: "About"
+    url: /about/
+  - title: "Category"
+    url: /categories/
+  - title: "Tag"
+    url: /tags/
+
+sidebar:
+  - title: "DEVELOPMENT"
+    children:
+      - title: "Projects"
+        url: /categories/#projects
+      - title: "Paper Reviews"
+        url: /categories/#paper-reviews
+      - title: "OS"
+        url: /categories/#os
+      - title: "Bayesian"
+        url: /categories/#bayesian
+  - title: "LIFE"
+    children:
+      - title: "Cafe"
+        url: /categories/#cafe
+      - title: "Restaurant"
+        url: /categories/#restaurant
+  - title: "NOTES"
+    children:
+      - title: "AI"
+        url: /categories/#ai
+      - title: "Drone"
+        url: /categories/#drone

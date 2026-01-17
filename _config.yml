@@ -1,0 +1,80 @@
+# Site
+lang: en
+locale: en-US
+title: "Jeongsoo's Blog"
+description: "Robotics / UAV / AI notes, projects, and life logs."
+url: "https://jeongsoopang.github.io"   # CHANGE if you use a custom domain
+baseurl: ""                             # keep empty for <username>.github.io
+
+# Theme
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "default"        # keep the clean white look
+
+# Build
+markdown: kramdown
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: /page:num/
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-include-cache
+
+# Author (left profile card)
+author:
+  name: "Jeongsoo Pang"
+  avatar: "/assets/images/profile.jpg"  # put your photo here
+  bio: "Robotics / UAV / AI"
+  location: "South Korea"
+  links:
+    - label: "Blog's Home"
+      icon: "fas fa-fw fa-home"
+      url: "/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/jeongsoopang"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/REPLACE_ME"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:REPLACE_ME@example.com"
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      sidebar:
+        nav: "sidebar"
+      read_time: true
+      comments: false
+      share: false
+      related: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# Navigation
+collections:
+  pages:
+    output: true
+
+include:
+  - _pages
+
+# Exclude
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
