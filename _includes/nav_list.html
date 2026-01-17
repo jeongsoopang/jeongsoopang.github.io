@@ -1,0 +1,40 @@
+{% assign nav = include.nav %}
+
+<ul class="nav__items">
+  {% for item in nav %}
+    {% assign item_title = item.title %}
+    {% assign item_url = item.url %}
+
+    {%- comment -%}
+    Map sidebar titles -> category keys
+    (You can change the mapping below to match your category names)
+    {%- endcomment -%}
+    {% assign cat_key = "" %}
+    {% if item_title == "Projects" %}{% assign cat_key = "projects" %}{% endif %}
+    {% if item_title == "Paper Reviews" %}{% assign cat_key = "paper-review" %}{% endif %}
+    {% if item_title == "OS" %}{% assign cat_key = "os" %}{% endif %}
+    {% if item_title == "Bayesian" %}{% assign cat_key = "bayesian" %}{% endif %}
+    {% if item_title == "Cafe" %}{% assign cat_key = "cafe" %}{% endif %}
+    {% if item_title == "Restaurant" %}{% assign cat_key = "restaurant" %}{% endif %}
+    {% if item_title == "AI" %}{% assign cat_key = "ai" %}{% endif %}
+    {% if item_title == "Drone" %}{% assign cat_key = "drone" %}{% endif %}
+
+    {% assign cnt = nil %}
+    {% if cat_key != "" and site.categories[cat_key] %}
+      {% assign cnt = site.categories[cat_key].size %}
+    {% endif %}
+
+    <li>
+      <a href="{{ item_url | relative_url }}">
+        {{ item_title }}
+        {% if cnt != nil %}
+          <span class="nav-count">({{ cnt }})</span>
+        {% endif %}
+      </a>
+
+      {% if item.children %}
+        {% include nav_list.html nav=item.children %}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
