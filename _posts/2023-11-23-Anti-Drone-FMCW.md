@@ -5,7 +5,7 @@ categories: [projects]
 tags: [anti-drone, fmcw-radar, computer-vision, machine-learning, defense-ai]
 ---
 
-![Anti-drone system overview](/assets/images/army.jpg)
+![Anti-drone system overview](/assets/images/army.jpg){: .img-small }
 
 Anti-Drone Project 
 
