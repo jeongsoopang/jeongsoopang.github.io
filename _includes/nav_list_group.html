@@ -1,0 +1,39 @@
+{%- comment -%}
+  Override group nav list to show counts too.
+{%- endcomment -%}
+
+{%- assign nav = include.nav | default: "sidebar" -%}
+{%- assign nav_items = site.data.navigation[nav] -%}
+
+{%- if nav_items -%}
+<ul class="nav__items">
+  {%- for group in nav_items -%}
+    <li>
+      <span class="nav__sub-title">{{ group.title }}</span>
+
+      {%- if group.children -%}
+        <ul>
+          {%- for item in group.children -%}
+            <li>
+              {%- assign cnt = nil -%}
+              {%- if item.url contains '/categories/' and item.url contains '#' -%}
+                {%- assign cat_key = item.url | split:'#' | last | downcase -%}
+                {%- if site.categories[cat_key] -%}
+                  {%- assign cnt = site.categories[cat_key] | size -%}
+                {%- endif -%}
+              {%- endif -%}
+
+              <a href="{{ item.url | relative_url }}">
+                {{ item.title }}
+                {%- if cnt != nil -%}
+                  <span class="nav__count">({{ cnt }})</span>
+                {%- endif -%}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </li>
+  {%- endfor -%}
+</ul>
+{%- endif -%}
