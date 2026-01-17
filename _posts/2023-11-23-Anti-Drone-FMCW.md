@@ -7,33 +7,32 @@ tags: [anti-drone, fmcw-radar, computer-vision, machine-learning, defense-ai]
 
 ![Anti-drone system overview](/assets/images/army.jpg)
 
+Anti-Drone Project 
+
+(FMCW Radar & Electro-Optical Fusion)
+
 ## Overview
 
-The **Anti-Drone Project** was conducted as part of the **AI Capacity Competition by the Korean National Defense** program.  
-The project focused on designing a **low-latency, robust machine-learning pipeline** for **UAV detection and classification** using **FMCW radar spectrograms**, **RCS imagery**, and auxiliary RF signals.
-
-- **Role:** Jeongsoo Pang  
-- **Program:** AI Capacity Competition (Korean National Defense)  
-- **Focus:** FMCW Radar Signal Intelligence & Electro-Optical Fusion  
-- **Date:** November 2023  
+The Anti-Drone Project was conducted as part of the AI Capacity Competition by the Korean National Defense and Groom program.  
+The project focused on designing a low-latency, robust machine-learning pipeline for UAV detection and classification using FMCW radar spectrograms, RCS imagery, and auxiliary RF signals.
 
 ---
 
 ## Abstract
 
-This project develops an **end-to-end drone detection and classification framework** based on **FMCW radar Doppler spectrograms** and **radar cross-section (RCS) images**.  
-Both **classical machine learning models** (SVM, Random Forest, Gradient Boosting) and **deep convolutional neural networks** (AlexNet, ResNet, GoogLeNet, SqueezeNet, NASNet) were systematically benchmarked to study trade-offs among **accuracy**, **noise robustness**, and **real-time inference feasibility** on edge hardware.
+This project develops an end-to-end drone detection and classification framework based on FMCW radar Doppler spectrograms and radar cross-section (RCS) images.  
+Both classical machine learning models (SVM, Random Forest, Gradient Boosting) and deep convolutional neural networks (AlexNet, ResNet, GoogLeNet, SqueezeNet, NASNet) were systematically benchmarked to study trade-offs among accuracy, noise robustness, and real-time inference feasibility on edge hardware.
 
-The resulting pipeline emphasizes **deployability**, **noise tolerance**, and **reproducibility**, aligning with practical defense-oriented radar sensing requirements.
+The resulting pipeline emphasizes deployability, noise tolerance, and reproducibility, aligning with practical defense-oriented radar sensing requirements.
 
 ---
 
 ## Project Objectives
 
-- Build an **end-to-end ML framework** for drone detection from FMCW radar data  
-- Compare **classical ML vs. deep CNNs** on radar spectrograms  
-- Evaluate **robustness under noise**, **latency**, and **hardware constraints**  
-- Provide a **research-grade, reproducible implementation** suitable for embedded deployment  
+- Build end-to-end ML framework for drone detection from FMCW radar data  
+- Compare classical ML vs. deep CNNs on radar spectrograms  
+- Evaluate robustness under noise, latency, and hardware constraints  
+- Provide research-grade, reproducible implementation suitable for embedded deployment
 
 ---
 
@@ -58,6 +57,7 @@ The resulting pipeline emphasizes **deployability**, **noise tolerance**, and **
 ## Model Architectures
 
 ### Classical Machine Learning
+
 | Model | Strength |
 |------|----------|
 | Linear SVC / SVC | Fast, interpretable baseline |
@@ -66,6 +66,7 @@ The resulting pipeline emphasizes **deployability**, **noise tolerance**, and **
 | SGDClassifier | Lightweight reference |
 
 ### Deep CNN Backbones
+
 | Model | Params (M) | Notes |
 |------|------------|------|
 | AlexNet | 61.0 | Baseline radar texture learning |
@@ -75,7 +76,7 @@ The resulting pipeline emphasizes **deployability**, **noise tolerance**, and **
 | NASNet | 5.3 | Architecture-search optimized |
 | MobileNetV2 | 3.5 | Strong accuracy/FLOPs ratio |
 
-All CNNs were fine-tuned from **ImageNet pretrained weights** using PyTorch.
+All CNNs were fine-tuned from ImageNet pretrained weights using PyTorch.
 
 ---
 
@@ -129,9 +130,9 @@ Accuracy under Gaussian noise perturbation (σ² ∈ {1e-4 … 1e-2}):
 
 ## Technical Highlights
 
-- Unified benchmarking of **classical ML + deep CNNs**  
+- Unified benchmarking of classical ML + deep CNNs  
 - Custom radar-to-image collate pipeline  
-- Full **W&B experiment tracking** with reproducible seeds  
+- Full W&B experiment tracking with reproducible seeds  
 - Grad-CAM analysis confirming attention on micro-Doppler regions  
 
 ---
@@ -155,10 +156,3 @@ Accuracy under Gaussian noise perturbation (σ² ∈ {1e-4 … 1e-2}):
 | Classical ML | SVM, RF, HistGBDT |
 | `README.md` | Documentation & setup |
 | `wandb/` | Logs, sweeps, dashboards |
-
----
-
-## Acknowledgment
-
-This project was conducted under a defense-oriented AI research program, integrating FMCW radar and EO sensing for UAV detection.  
-All experiments were executed using PyTorch with strict reproducibility and dataset version control.
