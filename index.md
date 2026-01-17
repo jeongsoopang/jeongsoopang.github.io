@@ -5,5 +5,3 @@ entries_layout: list
 sidebar:
   nav: "sidebar"
 ---
-
-# Recent posts
