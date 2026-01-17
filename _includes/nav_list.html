@@ -30,7 +30,7 @@
         {%- endif -%}
 
         <a href="{{ item.url | relative_url }}">
-          {{ item.title }}
+          {{ item.title }} <span class="nav__count">(TEST)</span>
           {%- if cnt != nil -%}
             <span class="nav__count">({{ cnt }})</span>
           {%- endif -%}
