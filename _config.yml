@@ -26,8 +26,8 @@ plugins:
 author:
   name: "Jeongsoo Pang"
   avatar: "/assets/images/profile.jpg"  # put your photo here
-  bio: "Robotics / UAV / AI"
-  location: "South Korea"
+  bio: "ML / DL / Robotics / UAV / AI"
+  location: "Shanghai - South Korea"
   links:
     - label: "Blog's Home"
       icon: "fas fa-fw fa-home"
@@ -37,10 +37,10 @@ author:
       url: "https://github.com/jeongsoopang"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/REPLACE_ME"
+      url: "https://www.linkedin.com/in/jeongsoo-pang/"
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
-      url: "mailto:REPLACE_ME@example.com"
+      url: "mailto:jeongsoopang@gmail.com"
 
 # Defaults
 defaults:
