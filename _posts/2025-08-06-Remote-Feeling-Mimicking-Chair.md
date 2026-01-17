@@ -1,29 +1,33 @@
 ---
-title: "Remote Feeling Mimicking Chair — Low-Latency Dual-Chair Haptic Teleoperation"
+title: "Remote Feeling Mimicking Chair"
 date: 2025-08-06
 categories: [projects]
 tags: [robotics, stewart-platform, design-expo]
 ---
 
 ![Expo photo of dual-chair haptic system](/assets/images/expo.jpg)
+Remote Feeling Mimicking Chair
+
+(Low-Latency Dual-Chair Haptic Teleoperation)
 
 ## Overview
 
-**Remote Feeling Mimicking Chair (RFMC)** is a **dual-chair haptic teleoperation system** that reproduces a remote operator’s seat motion in real time.  
-The system synchronizes **tilt (pitch/roll)** and **vibration** with **sub-10 ms** end-to-end latency, demonstrated at the **2025 SJTU Design Expo**.
+**Remote Feeling Mimicking Chair (RFMC)** is a dual-chair haptic teleoperation system that reproduces a remote operator’s seat motion in real time.  
+The system synchronizes tilt (pitch/roll) and vibration with sub-10 ms end-to-end latency, demonstrated at the 2025 SJTU Summer Design Expo.
 
-- **Role:** Jeongsoo Pang  
+- **Role:** Lead-Developer
 - **Affiliation:** UM–SJTU Joint Institute  
 - **Sponsor:** BuilderX  
 - **Instructor:** Prof. Chengbin Ma  
-- **Demo:** 2025 Design Expo
+- **Demo:** 2025 Summer Design Expo
 
 ---
 
 ## Abstract
 
-This project presents a **dual-chair haptic teleoperation system** that reproduces both **tilt (pitch/roll)** and **vibration** of a remote operator’s seat in real time.  
-A **three-actuator Stewart-inspired platform** driven by **24 V DC linear actuators** achieves a ±15° motion range and ~84 mm/s actuation speed. A **6-axis IMU (ICM-45686)** mounted on the source chair streams motion data over **Bluetooth Low Energy (BLE)** with sub-10 ms latency to an **ESP32** controller, which performs real-time inverse-kinematics control via **BTS7960 PWM drivers**. A **multi-threaded FreeRTOS firmware** handles IMU sampling, BLE communication, and actuator feedback in parallel, enabling smooth motion transitions with negligible delay. Experimental validation at the **2025 SJTU Design Expo** confirmed stable operation.
+This project presents dual-chair haptic teleoperation system that reproduces both tilt (pitch/roll) and vibration of a remote operator’s seat in real time. 
+
+Three-actuator Stewart-inspired platform driven by 24V DC linear actuators achieves a ±15° motion range and ~84 mm/s actuation speed. A 6-axis IMU (ICM-45686) mounted on the source chair streams motion data over Bluetooth Low Energy (BLE) with sub-10 ms latency to an ESP32 controller, which performs real-time inverse-kinematics control via BTS7960 PWM drivers A multi-threaded FreeRTOS firmware handles IMU sampling, BLE communication, and actuator feedback in parallel, enabling smooth motion transitions with negligible delay. Experimental validation at the 2025 SJTU Design Expo** confirmed stable operation.
 
 ---
 
@@ -34,8 +38,9 @@ The RFMC consists of two physically separated but electronically synchronized pl
 - **Chair 1 (Source):** Captures inertial data via IMU (motion + vibration).
 - **Chair 2 (Replica):** Reconstructs tilt and vibration in real time.
 
-BLE is used for **ultra-low latency**, enabling command rates up to **300 Hz** without packet loss.  
-The whole system weighs under **20 kg** and can be assembled in less than **45 minutes**.
+BLE is used for ultra-low latency, enabling command rates up to 300 Hz without packet loss.  
+
+The whole system weighs under 20 kg and can be assembled in less than 45 minutes.
 
 | Subsystem | Key Components | Function |
 |---|---|---|
@@ -50,8 +55,8 @@ The whole system weighs under **20 kg** and can be assembled in less than **45 m
 
 ## Mechanical Design and Kinematics
 
-The mechanical platform is **triangular and symmetric**, with actuators mounted at **0°, 120°, and 240°**.  
-This balances torque loads, reduces coupling, and simplifies equations (3 actuators instead of a full 6-DOF Stewart), while retaining realistic **2-DOF tilt**.
+The mechanical platform is triangular and symmetric, with actuators mounted at 0°, 120°, and 240.  
+This balances torque loads, reduces coupling, and simplifies equations (3 actuators instead of a full 6-DOF Stewart), while retaining realistic 2-DOF tilt.
 
 ### Key Structural Highlights
 
@@ -61,34 +66,34 @@ This balances torque loads, reduces coupling, and simplifies equations (3 actuat
 - **Geometry:** Equilateral triangle base, side length 540 mm  
 - **Center height:** 230 mm (rest), varies up to ±45 mm during tilt  
 
-Finite Element Analysis (FEA) showed maximum deformation **0.47 mm** at **800 N** load with **Von Mises stress 42.3 MPa**, below aluminum yield (~275 MPa).  
-Safety factor **> 3.1** under full tilt + payload.
+Finite Element Analysis (FEA) showed maximum deformation 0.47 mm at 800 N load with Von Mises stress 42.3 MPa, below aluminum yield (~275 MPa).  
+Safety factor > 3.1 under full tilt + payload.
 
-The inverse kinematics maps desired Euler angles to actuator lengths using **precomputed lookup tables** updated at **200 Hz**, reducing onboard compute load.
+The inverse kinematics maps desired Euler angles to actuator lengths using precomputed lookup tables updated at 200 Hz, reducing onboard compute load.
 
 ---
 
 ## Control and Electronics
 
 ### Sensor & Sampling
-The IMU runs at **1 kHz** raw sampling and is averaged to **100 Hz** for transmission stability.  
+The IMU runs at 1 kHz raw sampling and is averaged to 100 Hz for transmission stability.  
 A complementary Kalman-style filtering strategy reduces noise and bias drift.
 
 ### Communication & Timing (BLE)
 - **Connection interval:** 7.5 ms  
 - **MTU:** 247 bytes  
 - **Transmission rate:** ~300 packets/s (orientation + vibration)  
-Measured latency: **7.3 ms mean**, 99th percentile **< 9.4 ms** under interference.
+Measured latency: 7.3 ms mean, 99th percentile < 9.4 ms under interference.
 
 ### Actuation & Feedback
-- **BTS7960 drivers (43 A peak):** PWM 1–2 kHz, bidirectional control  
+- **BTS7960 drivers** (43 A peak): PWM 1–2 kHz, bidirectional control  
 - **PID loop:** 200 Hz (Kp = 2.1, Ki = 0.4, Kd = 0.12)  
 - **Vibration:** PWM-mapped intensity, 5–10 Hz resonance band
 
 ### Power
-Shared **24 V 10 A DC bus** with reverse-polarity protection and EMI filtering.  
-Measured draw: **~110 W steady**, **<160 W peak startup**.  
-Thermals remained **<55°C** in continuous operation.
+Shared 24 V 10 A DC bus with reverse-polarity protection and EMI filtering.  
+Measured draw: ~110 W steady, <160 W peak startup.  
+Thermals remained <55°C in continuous operation.
 
 ---
 
@@ -107,8 +112,8 @@ ESP32 **dual-core FreeRTOS** enables asynchronous processing:
 - **Task 3:** Inverse kinematics + PWM update (5 ms cycle)  
 - **Task 4:** Vibration modulation (adaptive 5–10 Hz)  
 
-Precomputed lookup tables reduced compute time by **~60%**.  
-Retransmission queue achieved **0.00% packet loss** under 2.4 GHz interference.
+Precomputed lookup tables reduced compute time by ~60%.  
+Retransmission queue achieved 0.00% packet loss under 2.4 GHz interference.
 
 ---
 
@@ -130,7 +135,7 @@ A 1000 Hz timestamped serial log confirmed synchronization between source and re
 
 ## Results Discussion
 
-RFMC achieved **high realism** with minimal delay and low jitter.  
+RFMC achieved high realism with minimal delay and low jitter.  
 Subjective trials rated realism:
 
 - Tilt response: **4.6 / 5.0**
@@ -155,14 +160,14 @@ Compared to commercial systems, RFMC achieved similar responsiveness at signific
 - Telepresence in hazardous environments
 
 ### Future Enhancements
-1. Add **force sensing** for bidirectional feedback  
-2. Expand to **6-DOF** (heave/surge/yaw)  
-3. Replace BLE with **Wi-Fi 6E / private 5G** for long-range telepresence  
-4. Use **AI-based predictive control** for motion compensation  
+1. Add force sensing for bidirectional feedback  
+2. Expand to 6-DOF (heave/surge/yaw)  
+3. Replace BLE with Wi-Fi 6E / private 5G for long-range telepresence  
+4. Use AI-based predictive control for motion compensation  
 
 ---
 
 ## Acknowledgment
 
-Developed by **Team 1 (Jeongsoo Pang et al.)** under **SJTU UM–JI Capstone Design (2025)** with **BuilderX support**.  
-This project demonstrates haptic telepresence with compact mechanics and optimized firmware achieving **industry-grade responsiveness**.
+Developed under SJTU UM–JI Capstone Design (2025) with BuilderX support.  
+This project demonstrates haptic telepresence with compact mechanics and optimized firmware achieving industry-grade responsiveness.
