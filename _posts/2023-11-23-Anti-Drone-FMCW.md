@@ -1,5 +1,5 @@
 ---
-title: "Anti-Drone Project — FMCW Radar & Electro-Optical Fusion"
+title: "Anti-Drone with ML&DL"
 date: 2023-11-23
 categories: [projects]
 tags: [anti-drone, fmcw-radar, computer-vision, machine-learning, defense-ai]
