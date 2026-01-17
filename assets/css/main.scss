@@ -9,3 +9,13 @@
   opacity: 0.7;
   margin-left: 4px;
 }
+
+/* Reduce post title size in category pages */
+.taxonomy__section h2 {
+  font-size: 1.1rem;   /* 기본은 ~1.6rem */
+  margin-bottom: 0.2em;
+}
+
+.taxonomy__section h2 a {
+  font-weight: 500;    /* 너무 두꺼우면 400~500 */
+}
