@@ -1,0 +1,13 @@
+{%- comment -%}
+  Sidebar override: always render navigation via nav_list_group.html (our overridden file)
+{%- endcomment -%}
+
+<div class="sidebar sticky">
+  {%- if page.author_profile or layout.author_profile -%}
+    {%- include author-profile.html -%}
+  {%- endif -%}
+
+  {%- if page.sidebar and page.sidebar.nav -%}
+    {%- include nav_list_group.html nav=page.sidebar.nav -%}
+  {%- endif -%}
+</div>
