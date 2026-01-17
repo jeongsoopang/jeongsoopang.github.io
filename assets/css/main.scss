@@ -19,3 +19,10 @@
 .taxonomy__section h2 a {
   font-weight: 500;    /* 너무 두꺼우면 400~500 */
 }
+
+/* Reduce post image size */
+.img-small {
+  max-width: 33%;
+  margin: 1.5rem auto;
+  display: block;
+}
