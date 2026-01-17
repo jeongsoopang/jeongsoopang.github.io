@@ -1,40 +1,48 @@
-{% assign nav = include.nav %}
+{%- comment -%}
+  Override Minimal Mistakes nav_list to show category post counts.
+  Works with: {% include nav_list nav="sidebar" %} and recursive children rendering.
+{%- endcomment -%}
 
+{%- assign nav_items = nil -%}
+
+{%- if include.nav -%}
+  {%- assign nav_items = site.data.navigation[include.nav] -%}
+  {%- if nav_items == nil -%}
+    {%- assign nav_items = include.nav -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- if nav_items == nil and include.items -%}
+  {%- assign nav_items = include.items -%}
+{%- endif -%}
+
+{%- if nav_items -%}
 <ul class="nav__items">
-  {% for item in nav %}
-    {% assign item_title = item.title %}
-    {% assign item_url = item.url %}
-
-    {%- comment -%}
-    Map sidebar titles -> category keys
-    (You can change the mapping below to match your category names)
-    {%- endcomment -%}
-    {% assign cat_key = "" %}
-    {% if item_title == "Projects" %}{% assign cat_key = "projects" %}{% endif %}
-    {% if item_title == "Paper Reviews" %}{% assign cat_key = "paper-review" %}{% endif %}
-    {% if item_title == "OS" %}{% assign cat_key = "os" %}{% endif %}
-    {% if item_title == "Bayesian" %}{% assign cat_key = "bayesian" %}{% endif %}
-    {% if item_title == "Cafe" %}{% assign cat_key = "cafe" %}{% endif %}
-    {% if item_title == "Restaurant" %}{% assign cat_key = "restaurant" %}{% endif %}
-    {% if item_title == "AI" %}{% assign cat_key = "ai" %}{% endif %}
-    {% if item_title == "Drone" %}{% assign cat_key = "drone" %}{% endif %}
-
-    {% assign cnt = nil %}
-    {% if cat_key != "" and site.categories[cat_key] %}
-      {% assign cnt = site.categories[cat_key].size %}
-    {% endif %}
-
+  {%- for item in nav_items -%}
     <li>
-      <a href="{{ item_url | relative_url }}">
-        {{ item_title }}
-        {% if cnt != nil %}
-          <span class="nav-count">({{ cnt }})</span>
-        {% endif %}
-      </a>
+      {%- if item.url -%}
+        {%- assign cnt = nil -%}
+        {%- if item.url contains '/categories/' and item.url contains '#' -%}
+          {%- assign cat_key = item.url | split:'#' | last | downcase -%}
+          {%- if site.categories[cat_key] -%}
+            {%- assign cnt = site.categories[cat_key] | size -%}
+          {%- endif -%}
+        {%- endif -%}
 
-      {% if item.children %}
-        {% include nav_list.html nav=item.children %}
-      {% endif %}
+        <a href="{{ item.url | relative_url }}">
+          {{ item.title }}
+          {%- if cnt != nil -%}
+            <span class="nav__count">({{ cnt }})</span>
+          {%- endif -%}
+        </a>
+      {%- else -%}
+        <span class="nav__sub-title">{{ item.title }}</span>
+      {%- endif -%}
+
+      {%- if item.children -%}
+        {%- include nav_list.html items=item.children -%}
+      {%- endif -%}
     </li>
-  {% endfor %}
+  {%- endfor -%}
 </ul>
+{%- endif -%}
