@@ -115,3 +115,14 @@
     margin: 0 0 1rem 0;
   }
 }
+
+/* Reduce gap between top block and Abstract */
+.project-top {
+  margin-bottom: 0.8rem; /* was 2rem */
+}
+
+/* Remove extra spacing caused by first section header */
+.project-top + hr {
+  margin: 0.6rem 0; /* tighten the separator */
+}
+
