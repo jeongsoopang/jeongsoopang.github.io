@@ -2,6 +2,7 @@
 title: "Anti-Drone with ML&DL"
 date: 2023-11-23
 categories: [projects]
+excerpt: "Machine learning pipeline for UAV detection using FMCW radar spectrograms and electro-optical sensor fusion."
 tags: [anti-drone, fmcw-radar, computer-vision, machine-learning, defense-ai]
 ---
 
