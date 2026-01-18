@@ -13,7 +13,7 @@ Anti-Drone Project
 
 ## Overview
 
-The Anti-Drone Project was conducted as part of the AI Capacity Competition by the Korean National Defense and Groom program.  
+The Anti-Drone Project was conducted as part of AI Capacity Competition by the Korean National Defense and Groom program.  
 The project focused on designing a low-latency, robust machine-learning pipeline for UAV detection and classification using FMCW radar spectrograms, RCS imagery, and auxiliary RF signals.
 
 ---
