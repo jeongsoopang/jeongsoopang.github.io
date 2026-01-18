@@ -156,4 +156,23 @@
   color: #555;
 }
 
+/* Sidebar: ONLY child items (Projects, Paper Reviews, etc.) */
+.sidebar .nav__items > li > ul > li > a {
+  font-size: 0.95rem;   /* 원하는 크기 (0.9~1.0 추천) */
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* count (Projects (3)) 크기 */
+.sidebar .nav__items > li > ul > li .nav__count {
+  font-size: 0.9em;
+  opacity: 0.75;
+}
+/* Home post excerpt: italic style */
+.layout--home .archive__item-excerpt {
+  font-style: italic;
+  font-size: 0.85rem;   /* Shanghai–Korea 정도 크기 유지 */
+  color: #555;
+  line-height: 1.45;
+}
 
