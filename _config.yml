@@ -65,6 +65,8 @@ defaults:
       layout: single
       classes: wide
       author_profile: true
+      sidebar:
+        nav: "sidebar"
       read_time: true
       comments: false
       share: false
