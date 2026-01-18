@@ -13,6 +13,7 @@ tags: [medical-ai, dicom, machine-learning, radiology, tabular-ml]
   </div>
 
   <div class="project-text">
+    {% capture overview_md %}
 
 Cercare Medical ML Project  
 (DICOM Series Type Detection)
@@ -27,10 +28,10 @@ The system was designed to be robust to missing, inconsistent, or vendor-depende
 
 External validation on partner-hospital datasets demonstrated high accuracy while maintaining conservative behavior through selective prediction.
 
+    {% endcapture %}
+    {{ overview_md | markdownify }}
   </div>
 </div>
-
----
 
 ## Abstract
 
