@@ -1,0 +1,183 @@
+---
+title: "OS: Operating Systems Overview"
+categories: [os]
+excerpt: "An operating system (OS) is the fundamental software layer that manages computer hardware and provides common services for application programs."
+tags: [operating-systems, kernel, system-calls, processes]
+---
+
+<div class="project-top">
+  <div class="project-text">
+    {% capture overview_md %}
+
+Operating Systems — Lecture 0  
+(Overview and Core Concepts)
+
+## Overview
+
+An operating system (OS) is the fundamental software layer that manages computer hardware and provides common services for application programs.  
+Rather than interacting directly with hardware, applications rely on the OS to allocate resources, enforce protection, and provide consistent abstractions.
+
+In modern systems, the OS must support concurrency, isolation, and efficient resource sharing while remaining robust against errors and misuse.  
+This lecture introduces the high-level goals, structure, and responsibilities of an operating system, forming the foundation for later topics such as processes, scheduling, memory management, and synchronization.
+
+    {% endcapture %}
+    {{ overview_md | markdownify }}
+  </div>
+</div>
+
+## Abstract
+
+This lecture presents a conceptual overview of operating systems and their role in modern computer systems.  
+It covers the OS as a resource manager, control program, and abstraction layer that mediates between hardware and user applications.
+
+Key mechanisms such as system calls, interrupts, dual-mode operation, and protection are introduced to explain how operating systems safely multiplex hardware resources.  
+The goal is to establish a mental model that will support deeper study of processes, threads, memory, and scheduling in subsequent lectures.
+
+---
+
+## What Is an Operating System?
+
+An operating system is a program that manages computer hardware and provides an execution environment for applications.
+
+Its primary roles include:
+
+- Managing hardware resources such as CPU time, memory, storage, and I/O devices  
+- Controlling program execution and handling exceptional conditions  
+- Providing abstractions that simplify hardware usage  
+
+In essence, the OS acts as an intermediary between hardware and user programs.
+
+---
+
+## OS Goals and Core Functions
+
+| Function | Key concepts | Description |
+|--------|-------------|-------------|
+| Resource allocation | CPU scheduling, memory management | Distributes limited resources among competing programs |
+| Concurrency control | Synchronization, locking | Ensures correctness during concurrent execution |
+| Protection and security | Access control, authentication | Prevents unauthorized access and interference |
+| Abstraction | Virtual memory, file systems | Presents simplified logical views of hardware |
+| Error handling | Fault detection and recovery | Detects and responds to hardware and software errors |
+
+---
+
+## Major OS Components
+
+An operating system is composed of several cooperating subsystems.
+
+| Component | Responsibility |
+|---------|----------------|
+| Process manager | Creation, scheduling, and termination of processes |
+| Memory manager | Allocation and management of physical and virtual memory |
+| File system | Organization and access control of stored data |
+| I/O manager | Device drivers, buffering, and interrupt handling |
+| Protection system | Isolation and access control between programs |
+| Command interpreter (shell) | Translates user commands into system calls |
+
+---
+
+## OS as an Abstraction Layer
+
+Operating systems hide hardware complexity by exposing higher-level abstractions.
+
+Conceptual flow:
+
+Hardware → OS abstractions → system calls → applications
+
+Examples:
+
+| Hardware | Abstraction | Interface |
+|--------|-------------|-----------|
+| Disk | File | File system |
+| Memory | Address space | Virtual memory |
+| CPU | Process | Scheduler |
+
+Applications interact with abstractions instead of raw hardware.
+
+---
+
+## System Calls
+
+A system call is the controlled interface through which a user program requests services from the OS kernel.
+
+System calls allow execution to transition safely from user mode to kernel mode.
+
+### Categories of system calls
+
+| Category | Examples | Purpose |
+|--------|----------|---------|
+| Process control | fork(), exec(), wait() | Manage process lifecycle |
+| File manipulation | open(), read(), write() | Access persistent storage |
+| Device manipulation | ioctl(), read() | Control I/O devices |
+| Information maintenance | getpid(), alarm() | Query system information |
+| Communication | pipe(), shmget() | Inter-process communication |
+
+---
+
+## Computer System Organization
+
+A computer system can be viewed as layered software:
+
+1. Hardware  
+2. Operating system kernel  
+3. System programs (shells, compilers, utilities)  
+4. User applications  
+
+### Interrupts
+
+An interrupt is a signal that causes the CPU to suspend current execution and transfer control to the OS.  
+The OS uses an interrupt vector table to dispatch execution to the correct handler.
+
+---
+
+## Modes of Operation
+
+To enforce protection, CPUs support multiple execution modes.
+
+| Mode | Description |
+|-----|-------------|
+| User mode | Restricted privileges for application code |
+| Kernel mode | Full access to hardware and system resources |
+
+A mode bit indicates the current privilege level:
+
+- 0: kernel mode  
+- 1: user mode  
+
+---
+
+## Dual-Mode Operation and Protection
+
+Dual-mode operation prevents user programs from interfering with the OS or other programs.
+
+Key protection mechanisms include:
+
+- Timer interrupts to prevent CPU monopolization  
+- Memory protection to isolate address spaces  
+- I/O privilege control restricting device access to kernel code  
+
+---
+
+## Boot Process
+
+The boot process initializes the system and loads the operating system.
+
+1. Power-on and CPU reset  
+2. Firmware (BIOS/UEFI) executes bootstrap code  
+3. Bootloader loads the OS kernel into memory  
+4. Kernel initialization and subsystem setup  
+5. Launch of user-level processes  
+
+---
+
+## Key Terms
+
+| Term | Description |
+|----|-------------|
+| Kernel | Core component of the operating system |
+| System call | Interface for requesting next OS services |
+| Interrupt | Signal indicating an event requiring attention |
+| Context switch | CPU switches execution between processes |
+| Trap | Software-generated interrupt |
+| Privilege level | CPU mode controlling access rights |
+| Bootstrap program | Firmware that loads the OS kernel |
