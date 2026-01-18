@@ -2,6 +2,7 @@
 title: "Remote Feeling Mimicking Chair"
 date: 2025-08-06
 categories: [projects]
+excerpt: "A low-latency dual chair haptic teleoperation system using a Stewart inspired platform and BLE-based real time control."
 tags: [robotics, stewart-platform, design-expo]
 ---
 
