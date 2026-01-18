@@ -27,6 +27,7 @@
   display: block;
 }
 
+
 /* Tight recent-post cards */
 .layout--home .list__item {
   padding: 0.7rem 0.9rem;   /* ↓ 내부 여백 줄이기 */
@@ -58,4 +59,37 @@
   line-height: 1.45;
 }
 
+/* Project top layout: images left, text right */
+.project-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 2rem;
+}
+
+.project-images {
+  flex: 0 0 320px;   /* 왼쪽 이미지 컬럼 고정 폭 */
+}
+
+.project-images img {
+  width: 100%;
+  display: block;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.project-text {
+  flex: 1;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+  .project-top {
+    flex-direction: column;
+  }
+
+  .project-images {
+    width: 100%;
+  }
+}
 
