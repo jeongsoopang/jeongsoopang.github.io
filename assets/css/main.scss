@@ -126,3 +126,21 @@
   margin: 0.6rem 0; /* tighten the separator */
 }
 
+/* Sidebar children font size (Projects, Paper Reviews, ...) */
+.sidebar .nav__items .nav__sub-title {
+  font-size: 0.95rem;   /* DEVELOPMENT 같은 급 */
+  font-weight: 700;
+}
+
+.sidebar .nav__items .nav__items a {
+  font-size: 0.95rem;   /* 하위 링크(Projects 등) 키우기 */
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* (3) 같은 count도 같이 보기 좋게 */
+.sidebar .nav__count {
+  font-size: 0.9em;
+  opacity: 0.7;
+}
+
