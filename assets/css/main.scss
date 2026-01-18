@@ -4,6 +4,7 @@
 
 @import "minimal-mistakes";
 
+/* Sidebar category counts (Projects (3)) */
 .nav__count {
   font-size: 0.9em;
   opacity: 0.7;
@@ -15,12 +16,11 @@
   font-size: 1.1rem;
   margin-bottom: 0.2em;
 }
-
 .taxonomy__section h2 a {
   font-weight: 500;
 }
 
-/* Small image aligned to left (float version is better for text wrap) */
+/* Small image aligned to left (float for text wrap) */
 .img-small-left {
   max-width: 33%;
   float: left;
@@ -35,40 +35,12 @@
   clear: both;
 }
 
-/* Tight recent-post cards */
-.layout--home .list__item {
-  padding: 0.7rem 0.9rem;
-  margin-bottom: 0.6rem;
-  border: 1px solid #e6e6e6;
-  border-radius: 5px;
-  background: #fff;
-}
-
-.layout--home .list__item h2,
-.layout--home .list__item h3 {
-  margin: 0 0 0.25rem 0;
-  font-size: 1.05rem;
-}
-
-.layout--home .list__item .page__meta {
-  margin: 0;
-  font-size: 0.75rem;
-  color: #777;
-}
-
-.layout--home .archive__item-excerpt {
-  margin-top: 0.35rem;
-  font-size: 0.85rem;
-  color: #555;
-  line-height: 1.45;
-}
-
 /* Project top layout: images left, text right */
 .project-top {
   display: flex;
   align-items: flex-start;
   gap: 32px;
-  margin-bottom: 2rem;
+  margin-bottom: 0.8rem; /* tighter gap to next section (e.g., Abstract) */
 }
 
 .project-images {
@@ -85,17 +57,53 @@
 .project-text {
   flex: 1;
   min-width: 0;
-  overflow-wrap: anywhere; /* 긴 단어/코드 줄바꿈 안전 */
+  overflow-wrap: anywhere; /* long tokens/code wrap safely */
 }
 
-.project-text h1 {
-  margin-top: 0;
-  margin-bottom: 0.25rem;
+/* Tighten separator right after the top block */
+.project-top + hr {
+  margin: 0.6rem 0;
 }
 
-.project-text .subtitle {
-  margin: 0 0 1rem 0;
-  color: #666;
+/* Home: Recent posts cards (smaller + tighter) */
+.layout--home .list__item {
+  padding: 0.45rem 0.6rem;
+  margin-bottom: 0.45rem;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.layout--home .archive__item-title {
+  margin: 0 0 0.2rem 0;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+.layout--home .list__item .page__meta {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.layout--home .archive__item-excerpt {
+  margin: 0;
+  font-style: italic;
+  font-size: 0.85rem; /* ~Email/Shanghai-Korea size */
+  line-height: 1.35;
+  color: #555;
+}
+
+/* Sidebar: child items only (Projects, Paper Reviews, ...) */
+.sidebar .nav__items > li > ul > li > a {
+  font-size: 0.85rem; /* match Email-ish size */
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.sidebar .nav__items > li > ul > li .nav__count {
+  font-size: 0.9em;
+  opacity: 0.75;
 }
 
 /* Responsive: stack on small screens */
@@ -115,64 +123,3 @@
     margin: 0 0 1rem 0;
   }
 }
-
-/* Reduce gap between top block and Abstract */
-.project-top {
-  margin-bottom: 0.8rem; /* was 2rem */
-}
-
-/* Remove extra spacing caused by first section header */
-.project-top + hr {
-  margin: 0.6rem 0; /* tighten the separator */
-}
-
-/* Home: make Recent posts cards smaller and tighter */
-.layout--home .list__item {
-  padding: 0.45rem 0.6rem;   /* 카드 내부 여백 줄이기 */
-  margin-bottom: 0.45rem;    /* 카드 간격 줄이기 */
-  border: 1px solid #e6e6e6;
-  border-radius: 6px;
-}
-
-/* Title size down (match small sidebar meta vibe) */
-.layout--home .archive__item-title {
-  margin: 0 0 0.2rem 0;
-  font-size: 0.95rem;        /* 기존 1.05rem보다 더 작게 */
-  line-height: 1.25;
-}
-
-/* Read time meta smaller */
-.layout--home .list__item .page__meta {
-  margin: 0 0 0.25rem 0;
-  font-size: 0.8rem;
-  color: #777;
-}
-
-/* Excerpt smaller (like "Shanghai - Korea") */
-.layout--home .archive__item-excerpt {
-  margin: 0;
-  font-size: 0.88rem;        /* 핵심: 본문을 작게 */
-  line-height: 1.35;
-  color: #555;
-}
-
-/* Sidebar: ONLY child items (Projects, Paper Reviews, etc.) */
-.sidebar .nav__items > li > ul > li > a {
-  font-size: 0.95rem;   /* 원하는 크기 (0.9~1.0 추천) */
-  font-weight: 500;
-  line-height: 1.4;
-}
-
-/* count (Projects (3)) 크기 */
-.sidebar .nav__items > li > ul > li .nav__count {
-  font-size: 0.9em;
-  opacity: 0.75;
-}
-/* Home post excerpt: italic style */
-.layout--home .archive__item-excerpt {
-  font-style: italic;
-  font-size: 0.85rem;   /* Shanghai–Korea 정도 크기 유지 */
-  color: #555;
-  line-height: 1.45;
-}
-
