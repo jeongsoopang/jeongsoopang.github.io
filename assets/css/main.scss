@@ -12,46 +12,50 @@
 
 /* Reduce post title size in category pages */
 .taxonomy__section h2 {
-  font-size: 1.1rem;   /* 기본은 ~1.6rem */
+  font-size: 1.1rem;
   margin-bottom: 0.2em;
 }
 
 .taxonomy__section h2 a {
-  font-weight: 500;    /* 너무 두꺼우면 400~500 */
+  font-weight: 500;
 }
 
-/* Small image aligned to left */
+/* Small image aligned to left (float version is better for text wrap) */
 .img-small-left {
   max-width: 33%;
-  margin: 1.2rem 1.5rem 1.2rem 0; /* right margin for text spacing */
-  display: block;
+  float: left;
+  margin: 0.2rem 1.2rem 0.8rem 0;
+  border-radius: 8px;
 }
 
+/* Clear float when needed */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
 /* Tight recent-post cards */
 .layout--home .list__item {
-  padding: 0.7rem 0.9rem;   /* ↓ 내부 여백 줄이기 */
-  margin-bottom: 0.6rem;   /* ↓ 카드 사이 간격 */
+  padding: 0.7rem 0.9rem;
+  margin-bottom: 0.6rem;
   border: 1px solid #e6e6e6;
   border-radius: 5px;
   background: #fff;
 }
 
-/* 제목 간격 줄이기 */
 .layout--home .list__item h2,
 .layout--home .list__item h3 {
   margin: 0 0 0.25rem 0;
-  font-size: 1.05rem;      /* 제목 약간 축소 */
+  font-size: 1.05rem;
 }
 
-/* 메타 정보 (read time) 타이트하게 */
 .layout--home .list__item .page__meta {
   margin: 0;
   font-size: 0.75rem;
   color: #777;
 }
 
-/* Home post abstract (excerpt) */
 .layout--home .archive__item-excerpt {
   margin-top: 0.35rem;
   font-size: 0.85rem;
@@ -68,7 +72,7 @@
 }
 
 .project-images {
-  flex: 0 0 320px;   /* 왼쪽 이미지 컬럼 고정 폭 */
+  flex: 0 0 320px;
 }
 
 .project-images img {
@@ -80,6 +84,18 @@
 
 .project-text {
   flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere; /* 긴 단어/코드 줄바꿈 안전 */
+}
+
+.project-text h1 {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+.project-text .subtitle {
+  margin: 0 0 1rem 0;
+  color: #666;
 }
 
 /* Responsive: stack on small screens */
@@ -90,6 +106,12 @@
 
   .project-images {
     width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .img-small-left {
+    float: none;
+    max-width: 100%;
+    margin: 0 0 1rem 0;
   }
 }
-
