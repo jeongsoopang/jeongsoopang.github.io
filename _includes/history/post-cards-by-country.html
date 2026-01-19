@@ -1,33 +1,41 @@
 {%- comment -%}
-Usage:
+  Usage:
   {% include history/post-cards-by-country.html country="DK" %}
-Assumption:
-  post front matter has: country: "DK" (ISO2 uppercase recommended)
 {%- endcomment -%}
 
-{% assign c = include.country | upcase %}
-{% assign posts_in_country = site.posts | where: "country", c %}
+{%- assign country_code = include.country | default: "" | downcase -%}
+{%- assign posts_in_country = site.posts | where_exp: "p", "p.country" -%}
+
+{%- assign filtered = "" | split: "" -%}
+{%- for p in site.posts -%}
+  {%- assign p_country = p.country | default: "" | downcase -%}
+  {%- if p_country == country_code -%}
+    {%- assign filtered = filtered | push: p -%}
+  {%- endif -%}
+{%- endfor -%}
 
 <div class="history-cards">
-  {% for post in posts_in_country %}
+  {%- for post in filtered -%}
+    {%- assign cover = post.cover | default: post.header.teaser | default: "" -%}
     <a class="history-card"
        href="{{ post.url | relative_url }}"
-       data-city="{{ post.city | escape }}"
-       data-lat="{{ post.lat }}"
-       data-lng="{{ post.lng }}">
-      {% if post.cover %}
-        <img src="{{ post.cover | relative_url }}" alt="{{ post.title }}">
-      {% endif %}
-      <div class="history-card-body">
-        <div class="history-card-title">{{ post.title }}</div>
-        {% if post.excerpt %}
-          <div class="history-card-excerpt">{{ post.excerpt | strip_html | truncate: 80 }}</div>
-        {% endif %}
+       data-city="{{ post.city | default: '' | escape }}"
+       data-lat="{{ post.lat | default: '' }}"
+       data-lng="{{ post.lng | default: '' }}"
+       data-url="{{ post.url | relative_url }}">
+
+      {%- if cover != "" -%}
+      <div class="history-card__image">
+        <img src="{{ cover | relative_url }}" alt="{{ post.title | escape }}">
+      </div>
+      {%- endif -%}
+
+      <div class="history-card__body">
+        <div class="history-card__title">{{ post.title }}</div>
+        {%- if post.excerpt -%}
+          <div class="history-card__excerpt">{{ post.excerpt | strip_html | truncate: 80 }}</div>
+        {%- endif -%}
       </div>
     </a>
-  {% endfor %}
-
-  {% if posts_in_country.size == 0 %}
-    <p style="color:#666;">No posts yet for {{ c }}.</p>
-  {% endif %}
+  {%- endfor -%}
 </div>
