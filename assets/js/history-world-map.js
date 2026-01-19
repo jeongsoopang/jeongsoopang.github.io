@@ -3,55 +3,70 @@ layout: null
 ---
 
 document.addEventListener("DOMContentLoaded", function () {
-  const mapContainer = document.getElementById("history-world-map");
-  if (!mapContainer) return;
+  const mapEl = document.getElementById("history-country-map");
+  if (!mapEl) return;
 
-  // Read settings from HTML data-* attrs
-  const geojsonUrl = mapContainer.dataset.geojsonUrl;
-  const historyBase = mapContainer.dataset.historyBase; // like "/history/"
-
-  // Read posts data injected by Liquid (JSON in the page)
-  const postsEl = document.getElementById("history-posts-data");
+  const postsEl = document.getElementById("history-country-posts-data");
   let posts = [];
   try {
     posts = postsEl ? JSON.parse(postsEl.textContent) : [];
   } catch (e) {
-    console.error("Failed to parse #history-posts-data JSON:", e);
+    console.error("Failed to parse history-country-posts-data JSON:", e);
   }
 
-  // countrySet: which ISO2 codes have posts (lowercase)
-  const countrySet = new Set();
-  const postsByCountry = new Map();
-  for (const p of posts) {
-    if (!p || !p.country) continue;
-    const c = String(p.country).toLowerCase();
-    countrySet.add(c);
-    if (!postsByCountry.has(c)) postsByCountry.set(c, []);
-    postsByCountry.get(c).push(p);
-  }
+  const valid = posts
+    .filter(p => p && p.lat !== "" && p.lng !== "" && !isNaN(Number(p.lat)) && !isNaN(Number(p.lng)))
+    .map(p => ({...p, lat: Number(p.lat), lng: Number(p.lng)}));
 
-  // Build Leaflet map
-  const map = L.map("history-world-map", { worldCopyJump: true }).setView([20, 0], 2);
+  const map = L.map("history-country-map", { worldCopyJump: true });
 
-  // ✅ OSM 기본 타일 (원래 컬러 지도)
+  // ✅ OSM 기본 타일
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "&copy; OpenStreetMap contributors",
   }).addTo(map);
 
-  // Utility: popup HTML for a country
-  function buildPopupHtml(countryCode) {
-    const items = postsByCountry.get(countryCode) || [];
-    if (items.length === 0) return `<b>${countryCode.toUpperCase()}</b>`;
-    const list = items
-      .map((p) => `<li><a href="${p.url}">${escapeHtml(p.title)}</a></li>`)
-      .join("");
-    return `
-      <div style="min-width:200px;">
-        <div style="font-weight:700;margin-bottom:6px;">${countryCode.toUpperCase()}</div>
-        <ul style="margin:0;padding-left:18px;">${list}</ul>
-      </div>
-    `;
+  const markers = [];
+  const bounds = [];
+
+  for (const p of valid) {
+    const m = L.marker([p.lat, p.lng]).addTo(map);
+    m.bindPopup(
+      `<div class="history-popup">
+        <b>${escapeHtml(p.city || "")}</b><br/>
+        <a href="${p.url}">${escapeHtml(p.title)}</a>
+      </div>`
+    );
+    m.on("click", () => {
+      // marker click already opens popup; optional direct navigate:
+      // window.location.href = p.url;
+    });
+    markers.push({ marker: m, url: p.url, title: p.title, city: p.city });
+    bounds.push([p.lat, p.lng]);
   }
+
+  if (bounds.length > 0) {
+    map.fitBounds(bounds, { padding: [18, 18] });
+  } else {
+    map.setView([20, 0], 2);
+  }
+
+  // ✅ 카드 hover → 해당 마커 popup 열기 (있으면)
+  const cards = document.querySelectorAll(".history-card");
+  cards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+      const lat = Number(card.dataset.lat);
+      const lng = Number(card.dataset.lng);
+      const url = card.dataset.postUrl;
+
+      if (isNaN(lat) || isNaN(lng)) return;
+
+      const found = markers.find(x => x.url === url);
+      if (!found) return;
+
+      map.setView([lat, lng], Math.max(map.getZoom(), 6), { animate: true });
+      found.marker.openPopup();
+    });
+  });
 
   function escapeHtml(s) {
     return String(s)
@@ -61,93 +76,4 @@ document.addEventListener("DOMContentLoaded", function () {
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
   }
-
-  // Fetch world geojson and render
-  fetch(geojsonUrl)
-    .then((res) => {
-      if (!res.ok) throw new Error(`HTTP ${res.status} for ${geojsonUrl}`);
-      return res.json();
-    })
-    .then((data) => {
-      let geoLayer = null;
-      const markersLayer = L.layerGroup().addTo(map);
-
-      geoLayer = L.geoJSON(data, {
-        style: (feature) => {
-          const iso2 = (feature?.properties?.["ISO3166-1-Alpha-2"] || "").toLowerCase();
-          const hasPosts = countrySet.has(iso2);
-
-          // ✅ 포스트 있는 나라만 강조
-          if (hasPosts) {
-            return {
-              color: "#2f6fed",
-              weight: 2,
-              fillColor: "#2f6fed",
-              fillOpacity: 0.18,
-            };
-          }
-          return {
-            color: "#9aa4b2",
-            weight: 1,
-            fillColor: "#000",
-            fillOpacity: 0.02,
-          };
-        },
-
-        onEachFeature: (feature, layer) => {
-          const iso2 = (feature?.properties?.["ISO3166-1-Alpha-2"] || "").toLowerCase();
-          const nameEn = feature?.properties?.name || iso2.toUpperCase();
-          const hasPosts = countrySet.has(iso2);
-
-          // ✅ “포스트 있는 나라만” 영어 이름 tooltip
-          if (hasPosts) {
-            layer.bindTooltip(nameEn, {
-              sticky: true,
-              direction: "center",
-              className: "history-country-tooltip",
-              opacity: 0.95,
-            });
-          }
-
-          // hover highlight (only for post countries)
-          layer.on("mouseover", () => {
-            if (!hasPosts) return;
-            layer.setStyle({ weight: 3, fillOpacity: 0.28 });
-            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-              layer.bringToFront();
-            }
-          });
-          layer.on("mouseout", () => {
-            if (!hasPosts) return;
-            layer.setStyle({ weight: 2, fillOpacity: 0.18 });
-          });
-
-          // ✅ 클릭: 포스트 있는 나라만 해당 국가 페이지로 이동
-          layer.on("click", () => {
-            if (!hasPosts) return;
-            window.location.href = `${historyBase}${iso2}/`;
-          });
-
-          // ✅ 핀(마커)도 “포스트 있는 나라만” 찍기
-          if (hasPosts) {
-            const center = layer.getBounds().getCenter();
-            const marker = L.circleMarker(center, {
-              radius: 5,
-              weight: 2,
-              fillOpacity: 0.9,
-            });
-            marker.bindPopup(buildPopupHtml(iso2));
-            marker.addTo(markersLayer);
-          }
-        },
-      }).addTo(map);
-
-      // Fit to world nicely
-      // (optional) map.fitBounds(geoLayer.getBounds());
-    })
-    .catch((err) => {
-      console.error("Failed to load world.geojson:", err);
-      mapContainer.innerHTML =
-        "<p style='color:#666;padding:1rem;'>Failed to load world map.</p>";
-    });
 });
