@@ -1,0 +1,44 @@
+{% assign cc = include.country | downcase %}
+{% assign posts_in_country = site.posts | where_exp: "p", "p.country and p.country downcase == cc" | sort: "date" | reverse %}
+
+<div class="history-cards">
+  {% for post in posts_in_country %}
+    <a class="history-card"
+       href="{{ post.url | relative_url }}"
+       data-post-url="{{ post.url | relative_url }}"
+       data-title="{{ post.title | escape }}"
+       data-city="{{ post.city | escape }}"
+       data-lat="{{ post.lat }}"
+       data-lng="{{ post.lng }}">
+      {% if post.cover %}
+        <img src="{{ post.cover | relative_url }}" alt="{{ post.title | escape }}">
+      {% else %}
+        <img src="{{ '/assets/images/placeholder.jpg' | relative_url }}" alt="{{ post.title | escape }}">
+      {% endif %}
+      <div class="history-card-body">
+        <p class="history-card-title">{{ post.title }}</p>
+        <div class="history-card-meta">
+          {% if post.city %}{{ post.city }}{% endif %}
+          {% if post.date %} · {{ post.date | date: "%b %d, %Y" }}{% endif %}
+        </div>
+        {% if post.excerpt %}
+          <p class="history-card-excerpt">{{ post.excerpt | strip_html | truncate: 90 }}</p>
+        {% endif %}
+      </div>
+    </a>
+  {% endfor %}
+</div>
+
+<script id="history-country-posts-data" type="application/json">
+[
+{% for post in posts_in_country %}
+  {
+    "title": {{ post.title | jsonify }},
+    "url": "{{ post.url | relative_url }}",
+    "city": {{ post.city | default: "" | jsonify }},
+    "lat": {{ post.lat | default: "" | jsonify }},
+    "lng": {{ post.lng | default: "" | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
+</script>
