@@ -1,6 +1,10 @@
-<div id="history-world-map" style="height: 520px; border-radius: 10px;"></div>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
-<script>
-  window.HISTORY_MAP_MODE = "world";
-</script>
+<div
+  id="history-world-map"
+  style="height: 420px; width: 100%; border-radius: 12px; overflow: hidden;"
+  data-geojson-url="{{ '/assets/geo/world.geojson' | relative_url }}"
+></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="{{ '/assets/js/history-world-map.js' | relative_url }}"></script>
