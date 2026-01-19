@@ -268,3 +268,23 @@ body.home-page .home-compact .archive__item {
   margin-bottom: 0.9rem !important;
 }
 
+/* ===============================
+   Home: reduce vertical spacing
+   between sections
+   =============================== */
+
+/* hr 위아래 여백 줄이기 */
+body.home-page .home-compact hr {
+  margin-top: 0.8rem !important;
+  margin-bottom: 0.3rem !important;
+}
+
+/* Notes / Life 제목 위 여백 제거 */
+body.home-page .home-compact h2 {
+  margin-top: 0.3rem !important;
+}
+
+/* 섹션 첫 요소가 바로 붙도록 */
+body.home-page .home-compact h2 + .entries-list {
+  margin-top: 0.2rem !important;
+}
