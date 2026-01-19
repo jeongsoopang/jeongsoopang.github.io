@@ -18,64 +18,67 @@ sidebar:
   - Uses Minimal Mistakes include: archive-single.html
 {% endcomment %}
 
-{% assign recent_posts = site.posts | slice: 0, 3 %}
+<div class="home-compact">
 
-<h2 style="margin-top: 0;">Recent Posts</h2>
-<div class="entries-list">
-  {% for post in recent_posts %}
-    {% include archive-single.html type="list" %}
+  {% assign recent_posts = site.posts | slice: 0, 3 %}
+
+  <h2 style="margin-top: 0;">Recent Posts</h2>
+  <div class="entries-list">
+    {% for post in recent_posts %}
+      {% include archive-single.html type="list" %}
+    {% endfor %}
+  </div>
+
+  <hr style="margin: 2rem 0;">
+
+  {% comment %}
+    Notes (latest 1)
+  {% endcomment %}
+
+  {% assign notes_posts = "" | split: "" %}
+  {% for p in site.posts %}
+    {% assign cats = p.categories | join: " " | downcase %}
+    {% if cats contains "notes" %}
+      {% assign notes_posts = notes_posts | push: p %}
+    {% endif %}
   {% endfor %}
-</div>
+  {% assign notes_latest = notes_posts | slice: 0, 1 %}
 
-<hr style="margin: 2rem 0;">
+  <h2>Notes</h2>
+  <div class="entries-list">
+    {% if notes_latest.size > 0 %}
+      {% for post in notes_latest %}
+        {% include archive-single.html type="list" %}
+      {% endfor %}
+    {% else %}
+      <p style="color: rgba(0,0,0,0.6);">No notes yet.</p>
+    {% endif %}
+  </div>
 
-{% comment %}
-  Notes (latest 1) - category matching is case-sensitive sometimes,
-  so we check both 'notes' and 'Notes' patterns via downcase.
-{% endcomment %}
+  <hr style="margin: 2rem 0;">
 
-{% assign notes_posts = "" | split: "" %}
-{% for p in site.posts %}
-  {% assign cats = p.categories | join: " " | downcase %}
-  {% if cats contains "notes" %}
-    {% assign notes_posts = notes_posts | push: p %}
-  {% endif %}
-{% endfor %}
-{% assign notes_latest = notes_posts | slice: 0, 1 %}
+  {% comment %}
+    Life (latest 2)
+  {% endcomment %}
 
-<h2>Notes</h2>
-<div class="entries-list">
-  {% if notes_latest.size > 0 %}
-    {% for post in notes_latest %}
-      {% include archive-single.html type="list" %}
-    {% endfor %}
-  {% else %}
-    <p style="color: rgba(0,0,0,0.6);">No notes yet.</p>
-  {% endif %}
-</div>
+  {% assign life_posts = "" | split: "" %}
+  {% for p in site.posts %}
+    {% assign cats = p.categories | join: " " | downcase %}
+    {% if cats contains "life" %}
+      {% assign life_posts = life_posts | push: p %}
+    {% endif %}
+  {% endfor %}
+  {% assign life_latest = life_posts | slice: 0, 2 %}
 
-<hr style="margin: 2rem 0;">
+  <h2>Life</h2>
+  <div class="entries-list">
+    {% if life_latest.size > 0 %}
+      {% for post in life_latest %}
+        {% include archive-single.html type="list" %}
+      {% endfor %}
+    {% else %}
+      <p style="color: rgba(0,0,0,0.6);">No life posts yet.</p>
+    {% endif %}
+  </div>
 
-{% comment %}
-  Life (latest 2)
-{% endcomment %}
-
-{% assign life_posts = "" | split: "" %}
-{% for p in site.posts %}
-  {% assign cats = p.categories | join: " " | downcase %}
-  {% if cats contains "life" %}
-    {% assign life_posts = life_posts | push: p %}
-  {% endif %}
-{% endfor %}
-{% assign life_latest = life_posts | slice: 0, 2 %}
-
-<h2>Life</h2>
-<div class="entries-list">
-  {% if life_latest.size > 0 %}
-    {% for post in life_latest %}
-      {% include archive-single.html type="list" %}
-    {% endfor %}
-  {% else %}
-    <p style="color: rgba(0,0,0,0.6);">No life posts yet.</p>
-  {% endif %}
 </div>
