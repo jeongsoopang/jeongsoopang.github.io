@@ -1,43 +1,45 @@
-(function () {
-  const el = document.getElementById("history-world-map");
-  if (!el) return;
+document.addEventListener("DOMContentLoaded", function () {
+  const mapContainer = document.getElementById("history-world-map");
+  if (!mapContainer) return;
 
-  const geoUrl = el.dataset.geojsonUrl; // ✅ Liquid가 넣어준 정확한 URL
-  if (!geoUrl) {
-    el.innerHTML = "Missing data-geojson-url on map container.";
-    return;
-  }
-
-  const map = L.map("history-world-map", { scrollWheelZoom: false }).setView([20, 0], 2);
+  const map = L.map("history-world-map", {
+    worldCopyJump: true
+  }).setView([20, 0], 2);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 8,
-    attribution: '&copy; OpenStreetMap contributors'
+    attribution: "&copy; OpenStreetMap contributors"
   }).addTo(map);
 
-  fetch(geoUrl, { cache: "no-store" })
-    .then((r) => {
-      if (!r.ok) throw new Error(`HTTP ${r.status} for ${geoUrl}`);
-      return r.json();
+  const geojsonUrl = "{{ '/assets/geo/world.geojson' | relative_url }}";
+
+  fetch(geojsonUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("HTTP error " + response.status);
+      }
+      return response.json();
     })
-    .then((geo) => {
-      L.geoJSON(geo, {
-        style: () => ({
+    .then(data => {
+      L.geoJSON(data, {
+        style: {
+          color: "#7b9acc",
           weight: 1,
-          opacity: 0.6,
-          fillOpacity: 0.08
-        }),
-        onEachFeature: (feature, layer) => {
-          layer.on("click", () => {
-            // TODO: 국가 클릭 -> 해당 국가 페이지로 이동 (다음 단계에서 연결)
-            const name = feature.properties && (feature.properties.name || feature.properties.ADMIN);
-            alert(`Clicked: ${name || "unknown"}`);
+          fillOpacity: 0.15
+        },
+        onEachFeature: function (feature, layer) {
+          layer.on("click", function () {
+            const iso2 = feature.properties.ISO_A2;
+            if (!iso2 || iso2 === "-99") return;
+
+            window.location.href =
+              "{{ '/history/' | relative_url }}" + iso2.toLowerCase() + "/";
           });
         }
       }).addTo(map);
     })
-    .catch((err) => {
-      console.error(err);
-      el.innerHTML = "Failed to load world.geojson. Check console and path.";
+    .catch(err => {
+      console.error("Failed to load world.geojson:", err);
+      mapContainer.innerHTML =
+        "<p style='color:#666;padding:1rem;'>Failed to load world map.</p>";
     });
-})();
+});
