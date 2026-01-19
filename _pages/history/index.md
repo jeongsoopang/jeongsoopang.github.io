@@ -11,4 +11,10 @@ leaflet: true
 
 Below is a clickable world map. Click a country to open my posts.
 
-{% include history/world-map.html %}
+<div
+  id="history-world-map"
+  data-geojson-url="{{ '/assets/geo/world.geojson' | relative_url }}"
+  data-history-base="{{ '/history/' | relative_url }}"
+  style="height: 420px; border-radius: 12px;">
+</div>
+
