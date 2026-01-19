@@ -1,6 +1,6 @@
 ---
 title: "Reference for Quadrotor System Modeling"
-categories: [drone]
+categories: [notes, drone]
 excerpt: "A concise reference of classical quadrotor system modeling, covering motor dynamics, thrust generation, and nonlinear equations of motion."
 tags: [drone, quadrotor, dynamics, modeling, control]
 mathjax: true
