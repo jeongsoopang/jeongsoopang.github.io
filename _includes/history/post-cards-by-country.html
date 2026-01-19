@@ -10,7 +10,11 @@ Assumption:
 
 <div class="history-cards">
   {% for post in posts_in_country %}
-    <a class="history-card" href="{{ post.url | relative_url }}">
+    <a class="history-card"
+       href="{{ post.url | relative_url }}"
+       data-city="{{ post.city | escape }}"
+       data-lat="{{ post.lat }}"
+       data-lng="{{ post.lng }}">
       {% if post.cover %}
         <img src="{{ post.cover | relative_url }}" alt="{{ post.title }}">
       {% endif %}
