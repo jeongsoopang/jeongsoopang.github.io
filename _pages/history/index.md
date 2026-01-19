@@ -3,9 +3,10 @@ title: "History"
 permalink: /history/
 layout: single
 author_profile: true
+custom_js:
+  - /assets/js/history-world-map.js
 header:
   overlay_image:
-# optional
 leaflet: true
 ---
 
