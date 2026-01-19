@@ -56,6 +56,9 @@ author:
   bio: "AI / Robotics / UAV"
   location: "Shanghai - Korea"
   links:
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/hijames.vlog"
     - label: "Blog's Home"
       icon: "fas fa-fw fa-home"
       url: "/"
