@@ -2,6 +2,10 @@
 title: History
 permalink: /history/
 layout: single
+classes: wide
+author_profile: true
+sidebar:
+  nav: "history"
 ---
 
 Below is a clickable world map. Countries with posts are highlighted.  
