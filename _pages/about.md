@@ -11,7 +11,7 @@ sidebar:
 Hi, I'm Jeongsoo Pang.
 
 ## 🏫 Work Experience
-- IMVL LAB @ SJTU
+- IRMV LAB @ SJTU
 (2026 - Present)
 
 - ML-Specialist Intern @ Cercare-Medical
