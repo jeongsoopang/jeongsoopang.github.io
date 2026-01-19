@@ -293,3 +293,29 @@ body.home-page .home-compact h2 + .entries-list {
 .page__footer-follow {
   display: none;
 }
+
+/* Custom footer social links */
+.custom-footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin: 0.4rem 0 0.9rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.custom-footer-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  color: rgba(0,0,0,0.6);
+}
+
+.custom-footer-social a:hover {
+  color: rgba(0,0,0,0.85);
+}
+
+.custom-footer-social i {
+  font-size: 1rem;
+}
