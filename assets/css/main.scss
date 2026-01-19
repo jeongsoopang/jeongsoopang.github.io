@@ -227,3 +227,42 @@
 .page__content.about-page li {
   font-size: 0.52rem;
 }
+/* ===============================
+   Home page: compact post lists
+   =============================== */
+
+.page__content.home-page {
+  font-size: 0.5rem;   /* 기준 대비 50% */
+  line-height: 1.5;
+}
+
+/* Post title */
+.page__content.home-page .archive__item-title {
+  font-size: 0.95rem;   /* 제목은 너무 작지 않게 */
+  line-height: 1.3;
+}
+
+/* Excerpt / description */
+.page__content.home-page .archive__item-excerpt,
+.page__content.home-page .archive__item-teaser,
+.page__content.home-page p {
+  font-size: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Meta info (reading time, date) */
+.page__content.home-page .page__meta,
+.page__content.home-page .archive__item-meta {
+  font-size: 0.45rem;
+}
+
+/* Section headers (Recent Posts, Notes, Life) */
+.page__content.home-page h2 {
+  font-size: 1.1rem;   /* 섹션 제목은 유지 */
+  margin-bottom: 0.6rem;
+}
+
+/* Spacing tighter */
+.page__content.home-page .archive__item {
+  margin-bottom: 0.8rem;
+}
