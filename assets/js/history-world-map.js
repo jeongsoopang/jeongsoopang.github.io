@@ -2,14 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const mapContainer = document.getElementById("history-world-map");
   if (!mapContainer) return;
 
-  // ✅ HTML에서 data-* 로 넘겨준 값 사용 (Liquid는 HTML에서만)
+  // HTML data-* 에서 URL 읽기 (Liquid는 HTML에서만 처리)
   const geojsonUrl = mapContainer.dataset.geojsonUrl;
   const historyBase = mapContainer.dataset.historyBase;
 
-  if (!geojsonUrl || !historyBase) {
-    console.error("Missing data-geojson-url or data-history-base on #history-world-map");
+  if (!geojsonUrl) {
+    console.error("Missing data-geojson-url on #history-world-map");
     mapContainer.innerHTML =
-      "<p style='color:#666;padding:1rem;'>Map config missing.</p>";
+      "<p style='color:#666;padding:1rem;'>Missing geojson URL.</p>";
     return;
   }
 
@@ -33,11 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         onEachFeature: function (feature, layer) {
           layer.on("click", function () {
-            const iso2 = feature?.properties?.ISO_A2;
+            const iso2 = feature.properties.ISO_A2;
             if (!iso2 || iso2 === "-99") return;
 
-            // ✅ historyBase가 "/history/" 같은 형태로 들어오므로 그냥 붙이면 됨
-            window.location.href = historyBase + iso2.toLowerCase() + "/";
+            // historyBase 예: "/history/"
+            const base = historyBase || "/history/";
+            window.location.href = base.replace(/\/?$/, "/") + iso2.toLowerCase() + "/";
           });
         }
       }).addTo(map);
