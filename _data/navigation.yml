@@ -14,7 +14,7 @@ history:
       - title: "0. Overview"
         url: /history/
       - title: "1. Denmark"
-        url: /history/denmark/
+        url: /history/dk/
 
 sidebar:
   - title: "DEVELOPMENT"
