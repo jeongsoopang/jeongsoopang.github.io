@@ -1,6 +1,8 @@
 main:
   - title: "About"
     url: /about/
+  - title: "History"
+    url: /history/
   - title: "Category"
     url: /categories/
   - title: "Tag"
