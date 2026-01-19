@@ -1,3 +1,5 @@
+---
+---
 document.addEventListener("DOMContentLoaded", function () {
   const mapContainer = document.getElementById("history-world-map");
   if (!mapContainer) return;
