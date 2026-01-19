@@ -3,7 +3,10 @@ title: "History"
 permalink: /history/
 layout: single
 author_profile: true
-classes: wide
+header:
+  overlay_image:
+# optional
+leaflet: true
 ---
 
 Below is a clickable world map. Click a country to open my posts.
