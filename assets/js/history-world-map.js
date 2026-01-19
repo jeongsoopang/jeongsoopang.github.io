@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const map = L.map("history-world-map", { worldCopyJump: true }).setView([20, 0], 2);
 
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: "&copy; OpenStreetMap contributors"
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+    attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
   }).addTo(map);
 
   fetch(geojsonUrl, { cache: "no-store" })
