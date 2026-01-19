@@ -2,7 +2,9 @@
 title: "About"
 permalink: /about/
 layout: single
-classes: wide
+classes:
+  - wide
+  - about-page
 author_profile: true
 sidebar:
   nav: "sidebar"
