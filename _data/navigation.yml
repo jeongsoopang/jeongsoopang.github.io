@@ -8,6 +8,14 @@ main:
   - title: "Tag"
     url: /tags/
 
+history:
+  - title: "History"
+    children:
+      - title: "0. Overview"
+        url: /history/
+      - title: "1. Denmark"
+        url: /history/denmark/
+
 sidebar:
   - title: "DEVELOPMENT"
     children:
