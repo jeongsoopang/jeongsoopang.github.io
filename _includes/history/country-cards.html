@@ -1,0 +1,18 @@
+{% assign c = include.country %}
+
+<div class="history-cards">
+  {% assign posts_in_country = site.posts | where: "country", c %}
+  {% for post in posts_in_country %}
+    <a class="history-card" href="{{ post.url | relative_url }}">
+      {% if post.cover %}
+        <img src="{{ post.cover | relative_url }}" alt="{{ post.title }}">
+      {% endif %}
+      <div class="history-card-body">
+        <p class="history-card-title">{{ post.title }}</p>
+        {% if post.excerpt %}
+          <p class="history-card-excerpt">{{ post.excerpt | strip_html | truncate: 60 }}</p>
+        {% endif %}
+      </div>
+    </a>
+  {% endfor %}
+</div>
