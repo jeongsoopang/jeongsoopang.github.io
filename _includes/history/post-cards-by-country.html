@@ -1,5 +1,11 @@
-{% assign c = include.country | downcase %}
+{%- comment -%}
+Usage:
+  {% include history/post-cards-by-country.html country="DK" %}
+Assumption:
+  post front matter has: country: "DK" (ISO2 uppercase recommended)
+{%- endcomment -%}
 
+{% assign c = include.country | upcase %}
 {% assign posts_in_country = site.posts | where: "country", c %}
 
 <div class="history-cards">
@@ -8,13 +14,16 @@
       {% if post.cover %}
         <img src="{{ post.cover | relative_url }}" alt="{{ post.title }}">
       {% endif %}
-
       <div class="history-card-body">
-        <p class="history-card-title">{{ post.title }}</p>
+        <div class="history-card-title">{{ post.title }}</div>
         {% if post.excerpt %}
-          <p class="history-card-excerpt">{{ post.excerpt | strip_html | truncate: 60 }}</p>
+          <div class="history-card-excerpt">{{ post.excerpt | strip_html | truncate: 80 }}</div>
         {% endif %}
       </div>
     </a>
   {% endfor %}
+
+  {% if posts_in_country.size == 0 %}
+    <p style="color:#666;">No posts yet for {{ c }}.</p>
+  {% endif %}
 </div>
