@@ -7,7 +7,7 @@ layout: single
 <div class="history-country-grid">
 
   <div>
-    {% include history/post-cards-by-country.html country="dk" %}
+    {% include history/post-cards-by-country.html country="DK" %}
   </div>
 
   <div>
