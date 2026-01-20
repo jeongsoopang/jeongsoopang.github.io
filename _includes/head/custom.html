@@ -1,3 +1,6 @@
+<!-- _includes/head/custom.html -->
+
+<!-- MathJax (site-wide) -->
 <script>
   window.MathJax = {
     tex: {
@@ -10,25 +13,16 @@
     }
   };
 </script>
-
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-/>
-<link rel="stylesheet" href="{{ '/assets/css/history.css' | relative_url }}">
-
 {% comment %}
-Load Leaflet + History CSS on History pages (world map + country map)
-This prevents "map blank" issues caused by load order / caching.
+History pages (/history/, /history/dk/, etc.)
+- Load Leaflet + History CSS only here (prevents blank map due to load order/caching)
+- Avoid duplicate Leaflet CSS/JS loads across the site
 {% endcomment %}
 
 {% if page.url contains '/history/' %}
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <link rel="stylesheet" href="/assets/css/history.css">
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="{{ '/assets/css/history.css' | relative_url }}">
 {% endif %}
