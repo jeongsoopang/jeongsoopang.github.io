@@ -6,10 +6,10 @@ city: "Canterbury"
 lat: 51.2798
 lng: 1.0830
 
-excerpt: "Quick tour of town centered around Canterbury Cathedral."
+excerpt: "town centered around Canterbury Cathedral."
 
 header:
-  teaser: /assets/images/history/uk/canterbury/teaser.jpg
+  teaser: /assets/images/history/uk/canterbury/canterbury.jpg
 
 tags:
   - uk
