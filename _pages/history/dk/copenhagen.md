@@ -1,5 +1,5 @@
 ---
-title: "Copenhagen"
+title: Copenhagen
 permalink: /history/dk/copenhagen/
 layout: single
 classes: wide
@@ -8,15 +8,10 @@ sidebar:
   nav: "history"
 ---
 
-{% assign city_posts = site.posts
-  | where: "country", "DK"
-  | where: "city", "Copenhagen"
-  | sort: "date"
-  | reverse %}
+{% assign city_posts = site.posts | where: "country", "DK" | where: "city", "Copenhagen" | sort: "date" | reverse %}
 
-<p style="margin-top:0.3rem;color:rgba(0,0,0,0.65);">
-  Trip posts in Copenhagen (June / July / November).
-</p>
+<h2 style="margin-top:0;">Copenhagen</h2>
+<p style="color:#666;">June / July / November posts</p>
 
 <div class="entries-grid">
   {% for post in city_posts %}
