@@ -1,135 +1,97 @@
-// assets/js/history-world-map.js
+// assets/js/history-country-map.js
 document.addEventListener("DOMContentLoaded", function () {
-  const mapContainer = document.getElementById("history-world-map");
-  if (!mapContainer) return;
+  const mapEl = document.getElementById("history-country-map");
+  if (!mapEl) return;
 
   // Leaflet 로딩 체크
   if (typeof L === "undefined") {
-    mapContainer.innerHTML =
+    mapEl.innerHTML =
       "<p style='color:#666;padding:1rem;'>Leaflet failed to load.</p>";
     return;
   }
 
-  // data attributes
-  const geojsonUrl =
-    mapContainer.dataset.geojsonUrl || "/assets/geo/world.geojson";
-  const historyBase = mapContainer.dataset.historyBase || "/history/";
+  // 카드에서 좌표 읽기 (우선순위 1)
+  const cards = Array.from(document.querySelectorAll(".history-card"));
+  const pointsFromCards = cards
+    .map((card) => {
+      const lat = parseFloat(card.dataset.lat);
+      const lng = parseFloat(card.dataset.lng);
+      const city = (card.dataset.city || "").trim();
+      const url = (card.dataset.url || card.getAttribute("href") || "").trim();
+      const title = (card.querySelector(".history-card__title")?.textContent || "").trim();
 
-  // posts에서 넘어온 국가코드 목록: "dk,kr,us" or "dk"
-  const countriesStr = (mapContainer.dataset.countries || "").trim();
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+      return { card, lat, lng, city, url, title };
+    })
+    .filter(Boolean);
 
-  const countriesSet = new Set(
-    countriesStr
-      .split(",")
-      .map((s) => s.trim().toLowerCase())
-      .filter(Boolean)
-  );
+  // window.HISTORY_POINTS 사용 (우선순위 2, 카드에 좌표가 없을 때)
+  const pointsFromWindow =
+    Array.isArray(window.HISTORY_POINTS)
+      ? window.HISTORY_POINTS
+          .map((p) => {
+            const lat = parseFloat(p.lat);
+            const lng = parseFloat(p.lng);
+            if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+            return {
+              card: null,
+              lat,
+              lng,
+              city: (p.city || "").trim(),
+              url: (p.url || "").trim(),
+              title: (p.title || "").trim()
+            };
+          })
+          .filter(Boolean)
+      : [];
 
-  // 지도 생성
-  const map = L.map("history-world-map", { worldCopyJump: true }).setView(
-    [20, 0],
-    2
-  );
+  const points = pointsFromCards.length > 0 ? pointsFromCards : pointsFromWindow;
+
+  // 지도 생성 (기본: 덴마크 근처)
+  const map = L.map("history-country-map", { worldCopyJump: true }).setView([56.1, 10.2], 6);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "&copy; OpenStreetMap contributors"
   }).addTo(map);
 
-  // 유틸: ISO2 읽기 (GeoJSON 종류가 바뀌어도 안 깨지게)
-  function getIso2(feature) {
-    const p = feature?.properties || {};
-    const iso2 =
-      p.ISO_A2 ||
-      p["ISO3166-1-Alpha-2"] ||
-      p.iso2 ||
-      p.ISO2 ||
-      "";
+  // 마커 생성
+  const markers = []; // { marker, point }
+  points.forEach((p) => {
+    const label = p.city || p.title || "Visited";
 
-    return iso2.toString().trim().toLowerCase();
+    const marker = L.circleMarker([p.lat, p.lng], {
+      radius: 7,
+      weight: 2,
+      fillOpacity: 0.9
+    }).addTo(map);
+
+    marker.bindTooltip(label, { sticky: true, direction: "top" });
+
+    // 핀 클릭 -> 포스트로 이동
+    if (p.url) {
+      marker.on("click", () => {
+        window.location.href = p.url;
+      });
+    }
+
+    markers.push({ marker, point: p });
+
+    // 카드 hover -> 핀 강조 & 이동 (카드가 있는 경우)
+    if (p.card) {
+      p.card.addEventListener("mouseenter", () => {
+        map.setView([p.lat, p.lng], Math.max(map.getZoom(), 9), { animate: true });
+        marker.openTooltip();
+      });
+
+      p.card.addEventListener("mouseleave", () => {
+        marker.closeTooltip();
+      });
+    }
+  });
+
+  // 핀이 있으면 bounds에 맞춰서 보기 좋게
+  if (points.length > 0) {
+    const bounds = L.latLngBounds(points.map((p) => [p.lat, p.lng]));
+    map.fitBounds(bounds, { padding: [20, 20] });
   }
-
-  // 유틸: 표시할 나라 이름
-  function getNameEn(feature, iso2) {
-    const p = feature?.properties || {};
-    return (
-      p.NAME_EN ||
-      p.ADMIN ||
-      p.name ||
-      p.NAME ||
-      (iso2 ? iso2.toUpperCase() : "Unknown")
-    );
-  }
-
-  // GeoJSON 로드
-  fetch(geojsonUrl)
-    .then((resp) => {
-      if (!resp.ok) {
-        throw new Error(
-          `Failed to load GeoJSON: ${resp.status} ${resp.statusText}`
-        );
-      }
-      return resp.json();
-    })
-    .then((geojson) => {
-      const layer = L.geoJSON(geojson, {
-        style: (feature) => {
-          const iso2 = getIso2(feature);
-          const hasPost = iso2 && countriesSet.has(iso2);
-
-          return {
-            weight: hasPost ? 1.5 : 1,
-            opacity: 1,
-            color: hasPost ? "#2b6cb0" : "#9aa5b1",
-            fillOpacity: hasPost ? 0.25 : 0.06
-          };
-        },
-
-        onEachFeature: (feature, lyr) => {
-          const iso2 = getIso2(feature);
-          const hasPost = iso2 && countriesSet.has(iso2);
-          if (!hasPost) return;
-
-          const nameEn = getNameEn(feature, iso2);
-
-          // Hover tooltip
-          lyr.bindTooltip(nameEn, { sticky: true });
-
-          lyr.on("mouseover", (e) => {
-            e.target.setStyle({ weight: 2.5, fillOpacity: 0.35 });
-          });
-
-          lyr.on("mouseout", (e) => {
-            layer.resetStyle(e.target);
-          });
-
-          // Click -> /history/dk/
-          lyr.on("click", () => {
-            window.location.href = `${historyBase}${iso2}/`;
-          });
-
-          // 핀: 국가 bounds 중심
-          try {
-            const center = lyr.getBounds().getCenter();
-            L.circleMarker(center, {
-              radius: 6,
-              weight: 2,
-              fillOpacity: 0.9
-            })
-              .addTo(map)
-              .bindTooltip(nameEn, { direction: "top", offset: [0, -6] });
-          } catch (err) {
-            // ignore
-          }
-        }
-      }).addTo(map);
-
-      // (선택) 포스트 있는 나라가 하나라도 있으면 대충 fitBounds
-      // - 너무 큰 GeoJSON이면 전체 레이어 bounds가 세계 전체가 될 수 있어서,
-      //   여기서는 굳이 안 당겨도 됨. 필요하면 켜자.
-    })
-    .catch((err) => {
-      console.error(err);
-      mapContainer.innerHTML =
-        "<p style='color:#666;padding:1rem;'>Failed to load world map data.</p>";
-    });
 });
