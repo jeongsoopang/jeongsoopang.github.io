@@ -11,10 +11,12 @@ main:
 history:
   - title: "History"
     children:
-      - title: "0. Overview"
+      - title: "Overview"
         url: /history/
-      - title: "1. Denmark"
+      - title: "Denmark"
         url: /history/dk/
+      - title: "United Kingdom"
+        url: /history/uk/
 
 sidebar:
   - title: "DEVELOPMENT"
