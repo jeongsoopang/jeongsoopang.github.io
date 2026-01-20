@@ -19,6 +19,8 @@ history:
         url: /history/uk/
       - title: "Finland"
         url: /history/fi/
+      - title: "Japan"
+        url: /history/jp/
 
 sidebar:
   - title: "DEVELOPMENT"
