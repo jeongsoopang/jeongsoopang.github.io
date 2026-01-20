@@ -6,7 +6,7 @@ city: "Cambridge"
 lat: 52.2053
 lng: 0.1218
 
-excerpt: "Quick Daily Cambridge Tour in Rainy Autimn."
+excerpt: "2024-10-20"
 
 header:
   teaser: /assets/images/history/uk/cambridge/cambridge.jpg
