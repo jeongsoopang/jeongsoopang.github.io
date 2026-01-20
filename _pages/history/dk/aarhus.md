@@ -15,6 +15,6 @@ sidebar:
 
 <div class="entries-grid">
   {% for post in city_posts %}
-    {% include archive-single.html type="grid" %}
+    {% include archive-single.html type="grid" post=post %}
   {% endfor %}
 </div>
