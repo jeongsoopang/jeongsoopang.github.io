@@ -6,7 +6,7 @@ city: "Canterbury"
 lat: 51.2798
 lng: 1.0830
 
-excerpt: "town centered around Canterbury Cathedral."
+excerpt: "2024-10-19"
 
 header:
   teaser: /assets/images/history/uk/canterbury/canterbury.jpg
