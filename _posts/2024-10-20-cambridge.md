@@ -9,7 +9,7 @@ lng: 0.1218
 excerpt: "Quick Daily Cambridge Tour in Rainy Autimn."
 
 header:
-  teaser: /assets/images/history/uk/cambridge/teaser.jpg
+  teaser: /assets/images/history/uk/cambridge/cambridge.jpg
 
 tags:
   - uk
