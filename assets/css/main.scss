@@ -340,3 +340,43 @@ body.home-page .home-compact h2 + .entries-list {
   object-position: center;
 }
 
+/* -----------------------------------------------------------------------------
+   Post Images (reduce size for better reading flow)
+   Applies to June Copenhagen and all other posts
+   ----------------------------------------------------------------------------- */
+
+/* 본문 이미지 기본 크기 제한 */
+.page__inner img {
+  max-width: 75%;       /* 브라우저 너비의 75%까지만 확장 */
+  height: auto;
+  display: block;        /* 이미지 아래 여백 제거 */
+  margin: 1.2rem auto;   /* 위아래 여유 + 가운데 정렬 */
+  border-radius: 6px;    /* 조금 둥글게 */
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* 가운데 정렬이 필요 없는 경우, 텍스트와 같이 흐르게 하고 싶다면 아래 옵션으로 */
+.page__inner .align-left img {
+  float: left;
+  margin: 0 1rem 1rem 0;
+  max-width: 45%;
+}
+
+.page__inner .align-right img {
+  float: right;
+  margin: 0 0 1rem 1rem;
+  max-width: 45%;
+}
+
+/* 반응형 대응 */
+@media only screen and (max-width: 768px) {
+  .page__inner img {
+    max-width: 100%;
+  }
+  .page__inner .align-left img,
+  .page__inner .align-right img {
+    float: none;
+    margin: 1rem auto;
+    max-width: 90%;
+  }
+}
