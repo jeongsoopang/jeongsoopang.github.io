@@ -431,3 +431,21 @@ body.home-page .home-compact h2 + .entries-list {
     grid-column: auto;
   }
 }
+
+/* 포스트 영상: 데스크톱에서 절반 크기 */
+.post-video {
+  width: 50%;
+  max-width: 520px;   /* 너무 커지지 않게 상한 */
+  height: auto;
+  display: block;
+  margin: 12px 0;
+  border-radius: 10px;  /* 필요 없으면 제거 */
+}
+
+/* 모바일에서는 100%로 보이게 */
+@media (max-width: 720px) {
+  .post-video {
+    width: 100%;
+    max-width: 100%;
+  }
+}
