@@ -126,16 +126,19 @@ Winter Island는
 
 ### 안데르센 마켓과 밤거리
 
-<div class="image-grid-3">
-  <img src="/assets/images/history/denmark/copenhagen/november/andersen-christmas-market.jpg">
-  <img src="/assets/images/history/denmark/copenhagen/november/pic-at-andersen-market.jpg">
-  <img src="/assets/images/history/denmark/copenhagen/november/andersen-santa.jpg">
+<div class="image-grid-1-2-2">
+  <!-- 1줄: 가로 1장 -->
+  <img src="/assets/images/history/denmark/copenhagen/november/andersen-christmas-market.jpg" alt="">
+
+  <!-- 2줄: 세로 2장 -->
+  <img src="/assets/images/history/denmark/copenhagen/november/pic-at-andersen-market.jpg" alt="">
+  <img src="/assets/images/history/denmark/copenhagen/november/andersen-santa.jpg" alt="">
+
+  <!-- 3줄: 세로 2장 -->
+  <img src="/assets/images/history/denmark/copenhagen/november/with-street-lights.jpg" alt="">
+  <img src="/assets/images/history/denmark/copenhagen/november/chirstmas-tivoli.jpg" alt="">
 </div>
 
-<div class="image-grid-3">
-  <img src="/assets/images/history/denmark/copenhagen/november/with-street-lights.jpg">
-  <img src="/assets/images/history/denmark/copenhagen/november/chirstmas-tivoli.jpg">
-</div>
 
 어디를 가도 불빛,  
 북적이지만 웃음으로 가득하고,
