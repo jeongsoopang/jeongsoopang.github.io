@@ -392,3 +392,12 @@ body.home-page .home-compact h2 + .entries-list {
   width: 100%;
   border-radius: 6px;
 }
+
+/* Grid images should not be constrained by .page__inner img rules */
+.page__inner .image-grid-3 img,
+.page__inner .image-grid-2 img {
+  max-width: 100% !important;
+  margin: 0 !important;
+  box-shadow: none;     /* 선택: 카드 느낌 싫으면 제거 */
+  display: block;
+}
