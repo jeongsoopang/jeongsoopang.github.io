@@ -22,7 +22,7 @@ tags: [denmark, copenhagen, travel]
 금요일 퇴근하자마자  
 코펜하겐의 크리스마스 분위기를 느껴보기로 했다.
 
-<video controls muted playsinline preload="metadata">
+<video class="post-video" controls muted playsinline preload="metadata">
   <source src="/assets/images/history/denmark/copenhagen/november/depart-aarhus.mp4" type="video/mp4">
 </video>
 
@@ -74,7 +74,7 @@ Steel House에 체크인.
 화덕 피자랑 Tuborg Classic 주문해서  
 야외 자리에 잠깐 앉아 있었다.
 
-<video controls muted playsinline preload="metadata">
+<video class="post-video" controls muted playsinline preload="metadata">
   <source src="/assets/images/history/denmark/copenhagen/november/pizza-oven.mp4" type="video/mp4">
 </video>
 
@@ -86,7 +86,7 @@ Steel House에 체크인.
 Winter Island는  
 겨울에 사우나랑 차가운 물 입수도 가능한 곳이다.
 
-<video controls muted playsinline preload="metadata">
+<video class="post-video" controls muted playsinline preload="metadata">
   <source src="/assets/images/history/denmark/copenhagen/november/winter-island-night.mp4" type="video/mp4">
 </video>
 
@@ -96,7 +96,7 @@ Winter Island는
 
 <img src="/assets/images/history/denmark/copenhagen/november/pizza-finished.jpg">
 
-<video controls muted playsinline preload="metadata">
+<video class="post-video" controls muted playsinline preload="metadata">
   <source src="/assets/images/history/denmark/copenhagen/november/pizza-steam.mp4" type="video/mp4">
 </video>
 
@@ -116,7 +116,6 @@ Winter Island는
 <div class="image-grid-3">
   <img src="/assets/images/history/denmark/copenhagen/november/hot-wine.jpg">
   <img src="/assets/images/history/denmark/copenhagen/november/hot-wine-price.jpg">
-  <img src="/assets/images/history/denmark/copenhagen/november/market-food.jpg">
 </div>
 
 글뤼바인(따뜻한 와인) 한 잔 손에 들고  
