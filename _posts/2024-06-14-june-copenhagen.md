@@ -126,7 +126,11 @@ Cercare-Medical 2024 Perfusion Summit에 참석하기 위해
 생크림을 감싸듯 두른 초콜릿,  
 위에 올려진 과일들까지 완벽한 모양.
 
-![Danish cake](/assets/images/history/denmark/copenhagen/june/danish-cake.jpg)
+<div class="image-grid-3">
+  <img src="/assets/images/history/denmark/copenhagen/june/bakery.jpg" alt="Bakery">
+  <img src="/assets/images/history/denmark/copenhagen/june/coffee.jpg" alt="Flat white">
+  <img src="/assets/images/history/denmark/copenhagen/june/danish-cake.jpg" alt="Danish cake">
+</div>
 
 ---
 
