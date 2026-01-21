@@ -15,102 +15,133 @@ tags: [denmark, copenhagen, travel]
 
 6월의 덴마크는 하루가 유난히 길다.  
 이번 코펜하겐은 여행이라기보다는,  
-그냥 기억해두고 싶은 하루들이 자연스럽게 이어진 느낌이었다.
+그냥 기억해두고 싶은 장면들이 자연스럽게 이어진 느낌이었다.
 
 ---
 
 ### Aarhus에서 Copenhagen으로, 이른 아침 출발
 
-Cercare-Medical의 2024 Perfusion Summit에 참석하기 위해  
-회사 사람들과 아침 일찍 차량으로 Aarhus에서 Copenhagen으로 이동했다.
+Cercare-Medical 2024 Perfusion Summit에 참석하기 위해  
+회사 사람들과 아침 일찍 차를 타고 Aarhus에서 Copenhagen으로 이동했다.
 
-아직 완전히 깨어나지 않은 도로,  
-창밖 풍경 보면서 멍하니 가다 보니 어느새 코펜하겐.
-
-![Driving to Copenhagen](/assets/images/history/denmark/copenhagen/june/drive.jpg)
-
----
-
-### Perfusion Summit, 그리고 숙소 체크인
-
-회사일정은 차분하게 잘 마무리됐다.  
-끝나고 나서는 백패커 느낌의 숙소로 이동.
-
-짐만 대충 풀고 창밖을 보니  
-“진짜 코펜하겐이네” 싶은 생각이 들었다.
+아직 덜 깬 도로,  
+창밖으로 스쳐 지나가던 풍경들 덕분에  
+생각보다 금방 도착.
 
 ---
 
-### Nyhavn 산책, 덴마크에 왔다는 실감
+### Perfusion Summit 이후, 도시로
 
-숙소에서 나와 가장 먼저 향한 곳은 Nyhavn.  
-항구 따라 늘어진 형형색색의 건물들과 푸른 물빛.
+일정은 차분하게 잘 마무리됐다.
 
-그냥 걷고, 서 있고, 사진 찍고.  
-아무것도 안 해도 덴마크에 와 있다는 게 느껴졌다.
+아직 회사 일을 시작한 지 오래되지 않아  
+모든 게 조금씩 어색하긴 했지만,  
+회사에 대해서도 이 분야에 대해서도  
+천천히 알아가기엔 참 좋은 시간이었다.
 
-![Nyhavn walk](/assets/images/history/denmark/copenhagen/june/nyhavn-1.jpg)
-![Nyhavn portraits](/assets/images/history/denmark/copenhagen/june/nyhavn-2.jpg)
+한국에서 초빙되어 오신 대학병원 교수님도 계셨고,  
+회사에 소속된 한국인 분과도 인사를 나눌 수 있어서  
+괜히 더 마음이 놓였던 하루.
 
----
+<div class="image-grid-2">
+  <img src="/assets/images/history/denmark/copenhagen/june/summit1.jpg" alt="Perfusion Summit banner">
+  <img src="/assets/images/history/denmark/copenhagen/june/summit2.jpg" alt="Perfusion Summit Copenhagen">
+</div>
 
-### 잠깐 들른 hunting 매장
-
-걷다가 보인 hunting 매장에도 잠깐 들어갔다.  
-실용적이면서도 과하지 않은 느낌. 
-괜히 덴마크스러운 감성이었다.
-
-![Hunting store](/assets/images/history/denmark/copenhagen/june/store.jpg)
-
----
-
-### 숙소 1층 부엌, 느슨한 저녁
-
-숙소가 백패커 스타일이라 1층에 공용 부엌이 있었다.  
-마트에서 사온 고기와 와인으로  
-간단하게 요리해서 먹는 저녁.
-
-이런 저녁이 오히려 더 기억에 남는다.
-
-![Cooking night](/assets/images/history/denmark/copenhagen/june/cooking.jpg)
+짐을 풀기 위해 도미토리 형태의 숙소에 체크인하고  
+잠깐 숨 돌린 뒤, 곧바로 시내로 나왔다.
 
 ---
 
-### 베이커리로 시작한 다음 날
+### 바다로 이어진 항구 물길을 따라
 
-다음 날 아침은 베이커리 샌드위치랑 플랫화이트로 시작해본다:)  
-조금은 서늘하지만 맑은 아침 공기 좋은 날에 먹는 커피가 내가 덴마크, 코펜하겐에 있다는 사실을 다시 한번 일깨운다.
+코펜하겐 오페라하우스 근처,  
+바다랑 거의 구분 안 되는 항만 수로를 따라 걷는다.
 
-![Bakery breakfast](/assets/images/history/denmark/copenhagen/june/bakery.jpg)
-![Flat white](/assets/images/history/denmark/copenhagen/june/coffee.jpg)
+운하처럼 보이지만 사실은 바다로 이어진 물길.  
+도시 한가운데인데도 묘하게 여유롭다.
+
+![Harbor walk](/assets/images/history/denmark/copenhagen/june/harbor-walk-1.jpg)
+![Harbor walk](/assets/images/history/denmark/copenhagen/june/harbor-walk-2.jpg)
 
 ---
 
-### Copenhagen 힐송, 그리고 느린 오후
+### 걷다 보니 마주친 프레데릭 교회와 아말리엔보르
 
-Copenhagen 힐송에서 예배드리고  
-이후에는 다시 정처없이 시내를 천천히 걸었다.
+정처 없이 걷다가  
+프레데릭 교회와 아말리엔보르 궁전 앞까지 오게 됐다.
 
-날씨가 너무 좋아
-아이스크림 하나 들고 괜히 더 돌아다니게 됐다.
+그 앞에서 마주친 근위병 보초.  
+움직이지도 않고 서 있는 근엄한 모습이 괜히 더 인상 깊었다.
 
-![Ice cream](/assets/images/history/denmark/copenhagen/june/icecream.jpg)
-![City walk](/assets/images/history/denmark/copenhagen/june/walk.jpg)
+![Frederik's Church](/assets/images/history/denmark/copenhagen/june/frederik-church.jpg)
+![Royal Guard](/assets/images/history/denmark/copenhagen/june/amalienborg-guard.jpg)
+
+---
+
+### 뜻밖의 한국 음식
+
+덴마크에서 한국 음식점을 만날 줄은 몰랐다.  
+반가운 마음에 들어가서 김치찌개 한 입.
+
+멀리 와 있을수록  
+이런 한 끼가 괜히 더 기억에 남는다.
+
+<div class="image-grid-3">
+  <img src="/assets/images/history/denmark/copenhagen/june/korean-food-1.jpg">
+  <img src="/assets/images/history/denmark/copenhagen/june/korean-food-2.jpg">
+  <img src="/assets/images/history/denmark/copenhagen/june/korean-food-3.jpg">
+</div>
+
+---
+
+### 엽서 같은 Nyhavn
+
+날씨도, 색감도, 사람들도  
+엽서처럼 보이던 Nyhavn.
+
+괜히 사진을 여러 장 남기게 된다.
+
+![Nyhavn](/assets/images/history/denmark/copenhagen/june/nyhavn-postcard.jpg)
+
+---
+
+### 발이 이끄는 대로
+
+특별한 목적 없이 걷다가  
+마주친 장면 하나 남겨보기.
+
+이런 사진이 나중에 더 오래 남는다.
+
+![City walk](/assets/images/history/denmark/copenhagen/june/city-walk-random.jpg)
+
+---
+
+### 베이커리에서 본 덴마크 케이크
+
+다음 날 아침은 베이커리에서 시작.  
+샌드위치랑 플랫화이트를 먹다가  
+유리 진열장 안 케이크에 괜히 시선이 간다.
+
+생크림을 감싸듯 두른 초콜릿,  
+위에 올려진 과일들까지 완벽한 모양.
+
+![Danish cake](/assets/images/history/denmark/copenhagen/june/danish-cake.jpg)
 
 ---
 
 ### 다시 Aarhus로
 
-다음날은 다시 출근해야하니  
-버스와 배에 몸을 싣고 Aarhus로 출발.
+다음날은 다시 출근해야 하니  
+버스랑 배를 타고 Aarhus로 출발~
 
 창밖으로 보이던 바다랑 하늘 덕분에  
-이동 시간마저도 괜히 좋았다.
+돌아가는 길마저 괜히 좋았다.
 
-![Back to Aarhus](/assets/images/history/denmark/copenhagen/june/return.jpg)
+![Return](/assets/images/history/denmark/copenhagen/june/return.jpg)
 
 ---
 
 이번 코펜하겐은  
-관광지를 많이 본 여행은 아니었지만  
+관광지를 많이 찍은 여행은 아니었지만  
 그래서 더 오래 기억에 남을 것 같다.
