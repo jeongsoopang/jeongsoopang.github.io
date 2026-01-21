@@ -449,3 +449,34 @@ body.home-page .home-compact h2 + .entries-list {
     max-width: 100%;
   }
 }
+
+/* 1줄(가로1) + 2줄(세로2) + 3줄(세로2) 강제 고정 */
+.image-grid-1-2-2 {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  align-items: stretch !important;
+  grid-auto-flow: row !important;
+}
+
+.image-grid-1-2-2 img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 10px;
+}
+
+/* 첫 번째 이미지는 2칸 전체(=가로 한 줄) */
+.image-grid-1-2-2 img:nth-child(1) {
+  grid-column: 1 / -1 !important;
+}
+
+/* 모바일은 1열로 */
+@media (max-width: 720px) {
+  .image-grid-1-2-2 {
+    grid-template-columns: 1fr !important;
+  }
+  .image-grid-1-2-2 img:nth-child(1) {
+    grid-column: auto !important;
+  }
+}
