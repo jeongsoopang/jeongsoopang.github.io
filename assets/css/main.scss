@@ -401,3 +401,33 @@ body.home-page .home-compact h2 + .entries-list {
   box-shadow: none;     /* 선택: 카드 느낌 싫으면 제거 */
   display: block;
 }
+
+/* 5장: 1(가로 크게) + 2 + 2 */
+.image-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
+.image-grid-5 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;   /* 필요 없으면 제거 */
+}
+
+/* 첫 번째 이미지만 2칸(가로 전체) */
+.image-grid-5 img:first-child {
+  grid-column: 1 / -1;
+}
+
+/* 모바일에서는 1열로 쌓이게 */
+@media (max-width: 720px) {
+  .image-grid-5 {
+    grid-template-columns: 1fr;
+  }
+  .image-grid-5 img:first-child {
+    grid-column: auto;
+  }
+}
