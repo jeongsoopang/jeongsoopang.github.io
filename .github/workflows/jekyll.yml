@@ -16,6 +16,9 @@ concurrency:
 
 jobs:
   build:
+    # push일 때는 커밋 메시지에 [deploy]가 있을 때만 실행
+    # workflow_dispatch(수동 실행)일 때는 항상 실행
+    if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[deploy]') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,6 +45,7 @@ jobs:
           path: ./_site
 
   deploy:
+    if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[deploy]') }}
     runs-on: ubuntu-latest
     needs: build
     environment:
