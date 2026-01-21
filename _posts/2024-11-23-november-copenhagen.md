@@ -128,10 +128,10 @@ Winter Island는
 
 <div class="image-grid-1-2-2">
   <!-- 1줄: 가로 1장 -->
-  <img src="/assets/images/history/denmark/copenhagen/november/andersen-christmas-market.jpg" alt="">
+  <img src="/assets/images/history/denmark/copenhagen/november/pic-at-andersen-market.jpg" alt="">
 
   <!-- 2줄: 세로 2장 -->
-  <img src="/assets/images/history/denmark/copenhagen/november/pic-at-andersen-market.jpg" alt="">
+  <img src="/assets/images/history/denmark/copenhagen/november/andersen-christmas-market.jpg" alt="">
   <img src="/assets/images/history/denmark/copenhagen/november/andersen-santa.jpg" alt="">
 
   <!-- 3줄: 세로 2장 -->
