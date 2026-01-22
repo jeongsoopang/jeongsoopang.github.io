@@ -1,6 +1,8 @@
 ---
 title: "Canterbury"
 categories: [history]
+sidebar:
+  nav: "history"
 country: "UK"
 city: "Canterbury"
 lat: 51.2798
