@@ -480,3 +480,18 @@ body.home-page .home-compact h2 + .entries-list {
     grid-column: auto !important;
   }
 }
+
+/* 항상 2개를 한 줄로 강제 (데스크톱/모바일 포함) */
+.image-grid-2-force {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  align-items: start !important;
+}
+
+.image-grid-2-force img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 10px;
+}
