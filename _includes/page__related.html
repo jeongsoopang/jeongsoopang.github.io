@@ -1,0 +1,45 @@
+{% comment %}
+History 전용 related posts
+- 현재 글과 같은 "history" 카테고리 글만 추천
+- 최대 4개
+{% endcomment %}
+
+{% if page.categories contains "history" %}
+
+  {% assign related_history = site.posts
+    | where_exp: "p", "p.url != page.url"
+    | where_exp: "p", "p.categories contains 'history'"
+    | sort: "date"
+    | reverse
+  %}
+
+  {% if related_history.size > 0 %}
+  <div class="page__related">
+    <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You may also enjoy" }}</h4>
+    <div class="grid__wrapper">
+      {% for post in related_history limit:4 %}
+        {% include archive-single.html type="grid" %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+{% else %}
+
+  {%- comment -%}
+  history가 아닌 글은 기존 동작(사이트 전체 관련글) 유지하고 싶으면:
+  아래는 “기본 관련글”의 간단 버전.
+  {%- endcomment -%}
+
+  {% if site.related_posts.size > 0 %}
+  <div class="page__related">
+    <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You may also enjoy" }}</h4>
+    <div class="grid__wrapper">
+      {% for post in site.related_posts limit:4 %}
+        {% include archive-single.html type="grid" %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+{% endif %}
