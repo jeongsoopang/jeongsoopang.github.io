@@ -1,6 +1,8 @@
 ---
 title: "June Copenhagen"
 categories: [history]
+sidebar:
+  nav: "history"
 country: "DK"
 city: "Copenhagen"
 lat: 55.6761
