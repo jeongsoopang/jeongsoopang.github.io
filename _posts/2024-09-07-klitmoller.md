@@ -1,6 +1,8 @@
 ---
 title: "Klitmøller"
 categories: [history]
+sidebar:
+  nav: "history"
 country: "DK"
 city: "Klitmøller"
 lat: 57.0449
