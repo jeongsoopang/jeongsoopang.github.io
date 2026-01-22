@@ -1,6 +1,8 @@
 ---
 title: "Cambridge"
 categories: [history]
+sidebar:
+  nav: "history"
 country: "UK"
 city: "Cambridge"
 lat: 52.2053
