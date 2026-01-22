@@ -170,3 +170,7 @@ Winter Island는
 그래서인지  
 이 크리스마스 마켓의 공기와 불빛이  
 괜히 더 오래 기억에 남는다.
+
+---
+
+<sub>© Jeongsoo Pang — All rights reserved</sub>
