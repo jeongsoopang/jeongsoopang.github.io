@@ -138,7 +138,7 @@ Bill's Big Brunch와 Flat-White로 하루를 열어본다.
   <img src="https://img.youtube.com/vi/lBIEweRRRpw/hqdefault.jpg" alt="UK Travel Vlog — Cambridge & London" class="youtube-thumbnail">
 </a>
 <p class="youtube-caption">
-  <a href="https://www.youtube.com/watch?v=lBIEweRRRpw" target="_blank">🎥 YouTube에서 보기 → UK Travel Vlog — Cambridge & London</a>
+  <a href="https://www.youtube.com/watch?v=lBIEweRRRpw" target="_blank">🎥 YouTube에서 보기 → 영국 Travel Vlog</a>
 </p>
 
 ---
