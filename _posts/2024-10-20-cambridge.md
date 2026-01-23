@@ -47,9 +47,10 @@ tags:
 
 <img src="/assets/images/history/uk/cambridge/3-lunch-at-bills.jpg" alt="">
 
-점심은 **Bill’s**에서 간단히.  
-따뜻한 음식과 커피 한 잔만 있어도  
-비 오는 날의 기분은 금방 괜찮아진다.
+**Bill’s**에서 
+Bill's Big Brunch와 Flat-White로 하루를 열어본다.  
+나름 영국인 처럼 하루를 시작해보고 싶었달까.
+식당 분위기도, 음식도 모두 만족스러웠다:) 
 
 ---
 
@@ -133,6 +134,19 @@ tags:
 다음엔 날이 조금 더 맑을 때,  
 강가를 더 오래 걷고 싶다.
 
+<a href="https://www.youtube.com/watch?v=lBIEweRRRpw" target="_blank" class="youtube-embed-link">
+  <img 
+    src="https://img.youtube.com/vi/lBIEweRRRpw/hqdefault.jpg" 
+    alt="UK Travel Vlog – Cambridge"
+    class="youtube-thumbnail"
+  >
+</a>
+
+<p style="margin-top: 6px; font-size: 0.9em; color: #666;">
+  🎥 UK Travel Vlog — Cambridge & London
+</p>
+
+
 ---
 
-## Cambridge<sub>© Jeongsoo Pang — All rights reserved</sub>
+<sub>© Jeongsoo Pang — All rights reserved</sub>
