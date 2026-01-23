@@ -48,22 +48,25 @@ Klitmøller까지 가는 대중교통은 현실적으로 거의 없었고
 
 ### Arrival — 금요일 밤, 북해의 바람
 
-<div class="image-grid-2">
-  <img src="/assets/images/history/denmark/klitmoller/1-arrival-shopping.jpg" alt="">
-  <img src="/assets/images/history/denmark/klitmoller/2-firstday-dinner.jpg" alt="">
-</div>
+<img src="/assets/images/history/denmark/klitmoller/1-arrival-shopping.jpg" alt="">
 
 퇴근 후 약 4시간.  
-해가 완전히 진 뒤 도착한 Klitmøller.
+해가 떨어지고 있을 때 도착한 Klitmøller.
 
 도착하자마자 근처에서 장을 봤다.  
 물, 음료, 간단한 저녁거리 —  
 피자와 **Klitmøller 브루어리 맥주**.
 
 <div class="image-grid-2">
+  img src="/assets/images/history/denmark/klitmoller/2-firstday-dinner.jpg" alt="">
   <img src="/assets/images/history/denmark/klitmoller/3-dinner-view.jpg" alt="">
-  <img src="/assets/images/history/denmark/klitmoller/4-dinner-beer.jpg" alt="">
 </div>
+
+숙소에서 피자를 데워  
+북해를 마주한 야외 테이블에 앉아  
+맥주 한 잔.
+
+<img src="/assets/images/history/denmark/klitmoller/4-dinner-beer.jpg" alt="">
 
 숙소에서 피자를 데워  
 북해를 마주한 야외 테이블에 앉아  
@@ -83,10 +86,8 @@ Klitmøller 브랜드의 에일과
 
 ### Surf Day — 잔잔했던 첫 파도
 
-<div class="image-grid-2">
-  <img src="/assets/images/history/denmark/klitmoller/5-nextday-surfing-shop.jpg" alt="">
-  <img src="/assets/images/history/denmark/klitmoller/6-start-surfing.jpg" alt="">
-</div>
+<img src="/assets/images/history/denmark/klitmoller/6-start-surfing.jpg" alt="">
+<img src="/assets/images/history/denmark/klitmoller/5-nextday-surfing-shop.jpg" alt="">
 
 둘째 날은  
 오전 한 타임, 오후 한 타임 —  
@@ -131,9 +132,10 @@ Klitmøller의 바닷속은
 
 ### Sunset — Klitmøller의 저녁
 
-<div class="image-grid-3-row">
+<img src="/assets/images/history/denmark/klitmoller/9-sunset-with-beer-and-olive.jpg" alt="">
+
+<div class="image-grid-2">
   <img src="/assets/images/history/denmark/klitmoller/8-sunset-after-dinner.jpg" alt="">
-  <img src="/assets/images/history/denmark/klitmoller/9-sunset-with-beer-and-olive.jpg" alt="">
   <img src="/assets/images/history/denmark/klitmoller/4-dinner-beer.jpg" alt="">
 </div>
 
@@ -207,24 +209,22 @@ Klitmøller에서 일몰로 유명한 바닷가로 다시 걸어 나왔다.
 
 ### Summer House & Goodbye
 
-<div class="image-grid-2">
-  <img src="/assets/images/history/denmark/klitmoller/16-dinner-at-summerhouse1.jpg" alt="">
-  <img src="/assets/images/history/denmark/klitmoller/17-dinner-at-summerhouse2.jpg" alt="">
-</div>
+<img src="/assets/images/history/denmark/klitmoller/14-waytosummerhouse1.jpg" alt="">
 
 회사 분이 다시 Klitmøller로 데리러 와주셨고,  
 가는 길에 다른 해변에도 잠시 들러  
 걷고, 맥주도 한 잔.
 
+<div class="image-grid-2">
+  <img src="/assets/images/history/denmark/klitmoller/16-dinner-at-summerhouse1.jpg" alt="">
+  <img src="/assets/images/history/denmark/klitmoller/17-dinner-at-summerhouse2.jpg" alt="">
+</div>
+
 장을 봐서 summer house로 돌아와  
 같이 저녁을 만들어 먹으며  
 하루를 마무리했다.
 
-<div class="image-grid-2">
-  <img src="/assets/images/history/denmark/klitmoller/18-breakfast-and-to-work-aarhus.jpg" alt="">
-  <img src="/assets/images/history/denmark/klitmoller/14-waytosummerhouse1.jpg" alt="">
-</div>
-
+<img src="/assets/images/history/denmark/klitmoller/18-breakfast-and-to-work-aarhus.jpg" alt="">
 월요일 새벽,  
 빵과 잼, 햄으로 간단히 아침을 챙겨 먹고  
 Aarhus까지의 긴 출근길을 출발.
