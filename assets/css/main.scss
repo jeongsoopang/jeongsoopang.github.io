@@ -520,3 +520,22 @@ body.home-page .home-compact h2 + .entries-list {
   font-size: 0.9em;
   color: #666;
 }
+
+.youtube-vlog img {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  display: block;
+  margin: 12px 0 8px 0;
+}
+
+.youtube-vlog a {
+  text-decoration: none;
+}
+
+.youtube-vlog a:last-child {
+  display: inline-block;
+  font-size: 0.95em;
+  color: #666;
+}
