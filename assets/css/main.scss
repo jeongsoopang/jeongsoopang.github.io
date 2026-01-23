@@ -495,3 +495,22 @@ body.home-page .home-compact h2 + .entries-list {
   display: block !important;
   border-radius: 10px;
 }
+
+/* YouTube vlog thumbnail in post */
+.youtube-embed-link {
+  display: block;
+  max-width: 720px;
+  margin: 16px 0 24px 0;
+}
+
+.youtube-thumbnail {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.youtube-thumbnail:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+}
