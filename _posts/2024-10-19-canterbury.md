@@ -43,9 +43,11 @@ tags:
 
 ### 골목을 따라 걷는 도시
 
-<img src="/assets/images/history/uk/canterbury/3-street.jpg" alt="">
-<img src="/assets/images/history/uk/canterbury/4-street.jpg" alt="">
-<img src="/assets/images/history/uk/canterbury/5-street.jpg" alt="">
+<div class="image-grid-3-row">
+  <img src="/assets/images/history/uk/canterbury/3-street.jpg" alt="">
+  <img src="/assets/images/history/uk/canterbury/4-street.jpg" alt="">
+  <img src="/assets/images/history/uk/canterbury/5-street.jpg" alt="">
+</div>
 
 Canterbury에 도착해 가장 먼저 느낀 건  
 ‘아, 여긴 걸어야 하는 도시구나’라는 생각이었다.
@@ -58,8 +60,10 @@ Canterbury에 도착해 가장 먼저 느낀 건
 
 ### 점심 — Marlowe’s Restaurant
 
-<img src="/assets/images/history/uk/canterbury/6-lunch1.jpg" alt="">
-<img src="/assets/images/history/uk/canterbury/7-lunch2.jpg" alt="">
+<div class="image-grid-2">
+  <img src="/assets/images/history/uk/canterbury/6-lunch1.jpg" alt="">
+  <img src="/assets/images/history/uk/canterbury/7-lunch2.jpg" alt="">
+</div>
 
 점심은 **Marlowe’s Restaurant**에서.  
 이곳에서 푸아그라와 스테이크를 주문했다.
@@ -89,8 +93,10 @@ Canterbury에 도착해 가장 먼저 느낀 건
 Canterbury의 중심, **Canterbury Cathedral**.  
 사진으로 보던 것보다 훨씬 웅장했다.
 
-<img src="/assets/images/history/uk/canterbury/11-cathedral-selfie.jpg" alt="">
-<img src="/assets/images/history/uk/canterbury/12-cathedral-garden.jpg" alt="">
+<div class="image-grid-2">
+  <img src="/assets/images/history/uk/canterbury/11-cathedral-selfie.jpg" alt="">
+  <img src="/assets/images/history/uk/canterbury/12-cathedral-garden.jpg" alt="">
+</div>
 
 안으로 들어가니  
 시간이 천천히 쌓여 만들어진 공간이라는 게  
@@ -109,8 +115,10 @@ Canterbury의 중심, **Canterbury Cathedral**.
 
 ### Westgate
 
-<img src="/assets/images/history/uk/canterbury/14-to-west-gate.jpg" alt="">
-<img src="/assets/images/history/uk/canterbury/15-westgate.jpg" alt="">
+<div class="image-grid-2">
+  <img src="/assets/images/history/uk/canterbury/14-to-west-gate.jpg" alt="">
+  <img src="/assets/images/history/uk/canterbury/15-westgate.jpg" alt="">
+</div>
 
 다음으로 향한 곳은 **Westgate**.  
 물길을 따라 배를 타는 체험도 유명한데,  
