@@ -134,17 +134,12 @@ Bill's Big Brunch와 Flat-White로 하루를 열어본다.
 다음엔 날이 조금 더 맑을 때,  
 강가를 더 오래 걷고 싶다.
 
-<a href="https://www.youtube.com/watch?v=lBIEweRRRpw" target="_blank" class="youtube-embed-link">
-  <img
-    src="https://img.youtube.com/vi/lBIEweRRRpw/hqdefault.jpg"
-    alt="UK Travel Vlog – Cambridge"
-    class="youtube-thumbnail"
-  >
-</a>
+<div class="youtube-vlog">
+  [![UK Travel Vlog — Cambridge & London](https://img.youtube.com/vi/lBIEweRRRpw/hqdefault.jpg)](https://www.youtube.com/watch?v=lBIEweRRRpw)
 
-<p class="youtube-caption">
-  🎥 UK Travel Vlog — Cambridge & London
-</p>
+  [🎥 YouTube에서 보기 → UK Travel Vlog — Cambridge & London](https://www.youtube.com/watch?v=lBIEweRRRpw)
+</div>
+
 
 
 ---
