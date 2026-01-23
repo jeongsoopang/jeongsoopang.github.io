@@ -58,7 +58,7 @@ Klitmøller까지 가는 대중교통은 현실적으로 거의 없었고
 피자와 **Klitmøller 브루어리 맥주**.
 
 <div class="image-grid-2">
-  img src="/assets/images/history/denmark/klitmoller/2-firstday-dinner.jpg" alt="">
+  <img src="/assets/images/history/denmark/klitmoller/2-firstday-dinner.jpg" alt="">
   <img src="/assets/images/history/denmark/klitmoller/3-dinner-view.jpg" alt="">
 </div>
 
@@ -215,16 +215,15 @@ Klitmøller에서 일몰로 유명한 바닷가로 다시 걸어 나왔다.
 가는 길에 다른 해변에도 잠시 들러  
 걷고, 맥주도 한 잔.
 
-<div class="image-grid-2">
-  <img src="/assets/images/history/denmark/klitmoller/16-dinner-at-summerhouse1.jpg" alt="">
-  <img src="/assets/images/history/denmark/klitmoller/17-dinner-at-summerhouse2.jpg" alt="">
-</div>
+<img src="/assets/images/history/denmark/klitmoller/16-dinner-at-summerhouse1.jpg" alt="">
+<img src="/assets/images/history/denmark/klitmoller/17-dinner-at-summerhouse2.jpg" alt="">
 
 장을 봐서 summer house로 돌아와  
 같이 저녁을 만들어 먹으며  
 하루를 마무리했다.
 
-<img src="/assets/images/history/denmark/klitmoller/18-breakfast-and-to-work-aarhus.jpg" alt="">
+<img src="/assets/images/history/denmark/klitmoller/18-breakfast-and-to-work-to-aarhus.jpg" alt="">
+
 월요일 새벽,  
 빵과 잼, 햄으로 간단히 아침을 챙겨 먹고  
 Aarhus까지의 긴 출근길을 출발.
@@ -239,6 +238,18 @@ Aarhus까지의 긴 출근길을 출발.
 
 ---
 
+### Surfing Moments
+
+<video controls muted playsinline preload="metadata" style="max-width: 720px; margin-bottom: 16px;">
+  <source src="/assets/images/history/denmark/klitmoller/surfing1.mov" type="video/mp4">
+</video>
+
+<video controls muted playsinline preload="metadata" style="max-width: 720px;">
+  <source src="/assets/images/history/denmark/klitmoller/surfing2.mov" type="video/mp4">
+</video>
+
+---
+
 <a href="https://www.youtube.com/watch?v=WvbmSyuXtSo" target="_blank" class="youtube-embed-link">
   <img 
     src="https://img.youtube.com/vi/WvbmSyuXtSo/hqdefault.jpg" 
@@ -250,6 +261,8 @@ Aarhus까지의 긴 출근길을 출발.
     🎥 YouTube에서 보기 → Cold Hawaii — Klitmøller Vlog
   </a>
 </p>
+
+
 
 ---
 
