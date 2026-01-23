@@ -115,15 +115,14 @@ Canterbury의 중심, **Canterbury Cathedral**.
 
 ### Westgate
 
-<div class="image-grid-2">
-  <img src="/assets/images/history/uk/canterbury/14-to-west-gate.jpg" alt="">
-  <img src="/assets/images/history/uk/canterbury/15-westgate.jpg" alt="">
-</div>
+<img src="/assets/images/history/uk/canterbury/15-westgate.jpg" alt="">
 
 다음으로 향한 곳은 **Westgate**.  
 물길을 따라 배를 타는 체험도 유명한데,  
 이날은 물살이 생각보다 빨라  
 아쉽게도 배를 타지는 못했다.
+
+<img src="/assets/images/history/uk/canterbury/14-to-west-gate.jpg" alt="">
 
 그래도  
 다리 위에서 바라본 풍경만으로도  
