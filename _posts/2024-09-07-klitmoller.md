@@ -167,10 +167,7 @@ Klitmøller에서 일몰로 유명한 바닷가로 다시 걸어 나왔다.
 
 ### Last Day — 바람과 파도
 
-<div class="image-grid-2">
-  <img src="/assets/images/history/denmark/klitmoller/10-last-day-surfing.jpg" alt="">
-  <img src="/assets/images/history/denmark/klitmoller/13-meet-coworker.jpg" alt="">
-</div>
+<img src="/assets/images/history/denmark/klitmoller/10-last-day-surfing.jpg" alt="">
 
 마지막 날 아침,  
 세 번째이자 마지막 서핑 타임.
@@ -210,6 +207,7 @@ Klitmøller에서 일몰로 유명한 바닷가로 다시 걸어 나왔다.
 ### Summer House & Goodbye
 
 <img src="/assets/images/history/denmark/klitmoller/14-waytosummerhouse1.jpg" alt="">
+<img src="/assets/images/history/denmark/klitmoller/13-meet-coworker.jpg" alt="">
 
 회사 분이 다시 Klitmøller로 데리러 와주셨고,  
 가는 길에 다른 해변에도 잠시 들러  
