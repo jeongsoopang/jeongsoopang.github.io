@@ -540,3 +540,25 @@ body.home-page .home-compact h2 + .entries-list {
     grid-template-columns: 1fr;
   }
 }
+
+/* 3장 한 줄 고정 (골목용) */
+.image-grid-3-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin: 1.2rem 0;
+}
+
+.image-grid-3-row img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* 모바일에서는 1열로 (가독성 유지) */
+@media (max-width: 720px) {
+  .image-grid-3-row {
+    grid-template-columns: 1fr;
+  }
+}
