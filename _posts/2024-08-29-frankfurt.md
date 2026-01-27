@@ -1,6 +1,6 @@
 ---
 title: "Frankfurt"
-categories: [history]
+categories: [history, germany]
 sidebar:
   nav: "history"
 
