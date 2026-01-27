@@ -172,7 +172,7 @@ tags:
 
 ---
 
-<img src="/assets/images/history/germany/fr️/15-haksen.jpg" alt="">
+<img src="/assets/images/history/germany/frankfurt/15-haksen.jpg" alt="">
 <img src="/assets/images/history/germany/frankfurt/16-schnizel.jpg" alt="">
 
 더 독일다운 선택을 하고 싶어  
