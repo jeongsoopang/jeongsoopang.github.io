@@ -22,7 +22,7 @@ tags:
 
 ## Frankfurt
 
-<img src="/assets/images/history/germany/frankfurt/1-introduction.jpg" alt="">
+<img src="/assets/images/history/germany/frankfurt/1.introduction.jpg" alt="">
 
 몽글몽글하고 아름다웠던  
 프랑크푸르트에서의 이야기 보따리를  
