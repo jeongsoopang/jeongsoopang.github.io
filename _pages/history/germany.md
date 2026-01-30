@@ -1,6 +1,6 @@
 ---
 title: Germany 🇩🇪
-permalink: /history/germany/
+permalink: /history/de/
 layout: single
 classes: wide
 author_profile: true
@@ -25,15 +25,16 @@ sidebar:
 
 <script>
   window.HISTORY_POINTS = [
-    {% assign de_posts = site.posts | where: "country", "DE" %}
-    {% for p in de_posts %}
-      {
-        title: {{ p.title | jsonify }},
-        url: {{ p.url | relative_url | jsonify }},
-        city: {{ p.city | jsonify }},
-        lat: {{ p.lat }},
-        lng: {{ p.lng }}
-      }{% unless forloop.last %},{% endunless %}
+    {% for p in site.posts %}
+      {% if p.country == "DE" %}
+        {
+          title: {{ p.title | jsonify }},
+          url: {{ p.url | relative_url | jsonify }},
+          city: {{ p.city | jsonify }},
+          lat: {{ p.lat }},
+          lng: {{ p.lng }}
+        }{% unless forloop.last %},{% endunless %}
+      {% endif %}
     {% endfor %}
   ];
 </script>
