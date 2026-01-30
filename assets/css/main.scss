@@ -564,11 +564,20 @@ body.home-page .home-compact h2 + .entries-list {
 }
 
 
-/* ===== Germany page card thumbnail tuning ===== */
+/* ===== Germany page: make teaser taller so less vertical cropping ===== */
+/* (Germany 페이지 body class가 page-taxonomy-germany가 아닐 수도 있어서, 3개를 같이 커버) */
 
-.page-taxonomy-germany .archive__item-teaser img {
-  height: 300px;
-  object-fit: cover;
-  object-position: center 30%;  /* 위쪽을 더 살림 */
+.page-taxonomy-germany .archive__item-teaser,
+.page-germany .archive__item-teaser,
+body[class*="germany"] .archive__item-teaser {
+  aspect-ratio: 4 / 5;      /* 4:3보다 "더 세로로 길게" → 위/아래 덜 잘림 */
 }
 
+.page-taxonomy-germany .archive__item-teaser img,
+.page-germany .archive__item-teaser img,
+body[class*="germany"] .archive__item-teaser img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;  /* 인물 사진이면 보통 위쪽을 조금 더 살리는 게 좋음 */
+}
