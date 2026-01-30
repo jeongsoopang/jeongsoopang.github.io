@@ -562,3 +562,9 @@ body.home-page .home-compact h2 + .entries-list {
     grid-template-columns: 1fr;
   }
 }
+
+
+.page__content h1:contains("Germany") 
+.archive__item-teaser img {
+  height: 260px;
+}
