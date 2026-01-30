@@ -564,20 +564,18 @@ body.home-page .home-compact h2 + .entries-list {
 }
 
 
-/* ===== Germany page: make teaser taller so less vertical cropping ===== */
-/* (Germany 페이지 body class가 page-taxonomy-germany가 아닐 수도 있어서, 3개를 같이 커버) */
+/* ===== Germany page only: make teaser taller (less vertical crop) ===== */
 
-.page-taxonomy-germany .archive__item-teaser,
-.page-germany .archive__item-teaser,
-body[class*="germany"] .archive__item-teaser {
-  aspect-ratio: 4 / 5;      /* 4:3보다 "더 세로로 길게" → 위/아래 덜 잘림 */
+.germany-page .archive__item-teaser {
+  aspect-ratio: auto !important;  /* 전역 4:3 강제 해제 */
+  height: 260px !important;       /* 카드 썸네일 박스를 실제로 키움 */
+  overflow: hidden !important;
 }
 
-.page-taxonomy-germany .archive__item-teaser img,
-.page-germany .archive__item-teaser img,
-body[class*="germany"] .archive__item-teaser img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;  /* 인물 사진이면 보통 위쪽을 조금 더 살리는 게 좋음 */
+.germany-page .archive__item-teaser img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 30% !important; /* 인물 사진 위쪽 더 살림 */
 }
+
