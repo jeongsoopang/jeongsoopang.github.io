@@ -22,3 +22,4 @@ sidebar:
     {% include archive-single.html type="grid" post=post %}
   {% endfor %}
 </div>
+
