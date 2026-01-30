@@ -2,7 +2,7 @@
 title: Germany 🇩🇪
 permalink: /history/germany/
 layout: single
-classes: wide
+classes: germany-page
 author_profile: true
 sidebar:
   nav: "history"
