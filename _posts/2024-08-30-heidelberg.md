@@ -62,7 +62,7 @@ tags:
 
 <div class="image-grid-2-force">
   <img src="/assets/images/history/germany/heidelberg/3-1-getting-ticket-to-heidelburg.jpg" alt="">
-  <img src="/assets/images/history/germany/heidelberg/3-2-getting-ticket-to-heidel...price.jpg" alt="">
+  <img src="/assets/images/history/germany/heidelberg/3-2-getting-ticket-to-heidelburg-price.jpg" alt="">
 </div>
 
 미리 눈여겨봤던 시간대의  
@@ -87,7 +87,7 @@ tags:
 
 ---
 
-<img src="/assets/images/history/germany/heidelberg/6-bus-lift-heidelbu...tation.jpg" alt="">
+<img src="/assets/images/history/germany/heidelberg/6-bus-lift-heidelburg-package-ticket-at-station.jpg" alt="">
 
 역을 나오자마자 보이는  
 투어 인포메이션 센터.  
@@ -105,7 +105,7 @@ tags:
 
 <div class="image-grid-2-force">
   <img src="/assets/images/history/germany/heidelberg/7-heidelburg-castle-selfie.jpg" alt="">
-  <img src="/assets/images/history/germany/heidelberg/8-heidelburg-castle-surround.jpg" alt="">
+  <img src="/assets/images/history/germany/heidelberg/8-heidelburg-castle-selfie-background.jpg" alt="">
 </div>
 
 푸니쿨라를 타고 올라  
@@ -174,7 +174,7 @@ Lamy 펜 스토어.
 
 ---
 
-<img src="/assets/images/history/germany/heidelberg/15-early-dinner-ordering...beer.jpg" alt="">
+<img src="/assets/images/history/germany/heidelberg/15-early-dinner-ordering-with-cold-beer.jpg" alt="">
 
 기차 시간 전,  
 **Heid’s Grill Restaurant**에서 이른 저녁.  
@@ -200,7 +200,7 @@ Lamy 펜 스토어.
 
 ---
 
-<img src="/assets/images/history/germany/heidelberg/17-enjoying-dinner-a-restaurant.jpg" alt="">
+<img src="/assets/images/history/germany/heidelberg/17-enjoying-dinner-at-heids-grill-restaurant.jpg" alt="">
 
 하이델베르크 여행에  
 조용히 마침표를 찍는 순간.  
