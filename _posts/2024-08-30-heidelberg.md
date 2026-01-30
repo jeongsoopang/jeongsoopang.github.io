@@ -140,11 +140,11 @@ tags:
 
 ---
 
-<img src="/assets/images/history/germany/heidelberg/12-beer-and-fries-after-ca...hiking.jpg" alt="">
+<img src="/assets/images/history/germany/heidelberg/12-beer-and-fries-after-castle-hiking.jpg" alt="">
 
 성 내부 정원을 바라보며  
 시원한 맥주 한 잔과 감자튀김.  
-햇살, 바람, 그리고 맥주의 쓴맛까지  
+햇살, 바람, 그리고 맥주의 고소한 맛까지  
 모두 제자리에 있었다.
 
 ---
@@ -210,7 +210,7 @@ Lamy 펜 스토어.
 
 이 도시는  
 다시 돌아올 이유를  
-굳이 설명하지 않아도 되는 곳안것 같다.
+굳이 설명하지 않아도 되는 곳인것 같다.
 
 ---
 
