@@ -564,7 +564,11 @@ body.home-page .home-compact h2 + .entries-list {
 }
 
 
-.page__content h1:contains("Germany") 
-.archive__item-teaser img {
-  height: 260px;
+/* ===== Germany page card thumbnail tuning ===== */
+
+.page-taxonomy-germany .archive__item-teaser img {
+  height: 300px;
+  object-fit: cover;
+  object-position: center 30%;  /* 위쪽을 더 살림 */
 }
+
