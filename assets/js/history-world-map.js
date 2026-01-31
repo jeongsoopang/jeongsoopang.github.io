@@ -11,8 +11,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // data attributes
-  const geojsonUrl = mapContainer.dataset.geojsonUrl || "/assets/geo/world.geojson";
+  const geojsonUrl =
+    mapContainer.dataset.geojsonUrl || "/assets/geo/world.geojson";
   const historyBase = mapContainer.dataset.historyBase || "/history/";
+
+  // ============================
+  // ✅ (NEW) Country click overrides
+  // - 특정 나라 클릭 시 /history/{slug}/ 가 아니라
+  //   '포스팅' permalink로 직행시키고 싶을 때 사용
+  //
+  // GeoJSON ISO2(소문자) -> absolute/relative URL
+  // ============================
+  const COUNTRY_CLICK_OVERRIDES = {
+    gu: `${historyBase}guam/` // Guam(ISO2=GU) 클릭하면 포스팅 /history/guam/ 으로
+  };
 
   // --- 핵심: UK(사이트 코드) <-> GB(ISO 코드) 매핑 ---
   // GeoJSON(ISO2) 기준으로 highlight/pin을 켜야 하므로 "uk" -> "gb" 로 normalize
@@ -43,7 +55,10 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   // 지도 생성 (월드뷰)
-  const map = L.map("history-world-map", { worldCopyJump: true }).setView([20, 0], 2);
+  const map = L.map("history-world-map", { worldCopyJump: true }).setView(
+    [20, 0],
+    2
+  );
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "&copy; OpenStreetMap contributors"
@@ -52,7 +67,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // GeoJSON 로드
   fetch(geojsonUrl)
     .then((resp) => {
-      if (!resp.ok) throw new Error(`Failed to load GeoJSON: ${resp.status} ${resp.statusText}`);
+      if (!resp.ok)
+        throw new Error(
+          `Failed to load GeoJSON: ${resp.status} ${resp.statusText}`
+        );
       return resp.json();
     })
     .then((geojson) => {
@@ -108,9 +126,18 @@ document.addEventListener("DOMContentLoaded", function () {
             layer.resetStyle(e.target);
           });
 
-          // Click -> 국가 페이지로 이동
-          // (중요) GeoJSON ISO(GB) -> 사이트 slug(uk)로 변환
+          // ============================
+          // ✅ Click -> override or country page
+          // ============================
           lyr.on("click", function () {
+            // 1) override가 있으면 그 URL로 직행
+            if (COUNTRY_CLICK_OVERRIDES[iso2]) {
+              window.location.href = COUNTRY_CLICK_OVERRIDES[iso2];
+              return;
+            }
+
+            // 2) 기본은 국가 페이지로 이동
+            //    (중요) GeoJSON ISO(GB) -> 사이트 slug(uk)로 변환
             const slug = geoIso2ToPageSlug(iso2);
             const url = `${historyBase}${slug}/`;
             window.location.href = url;
