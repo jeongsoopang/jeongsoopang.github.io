@@ -13,6 +13,8 @@ history:
     children:
       - title: "Overview"
         url: /history/
+      - title: "Guam"
+        url: /history/guam/
       - title: "Denmark"
         url: /history/dk/
       - title: "United Kingdom"
