@@ -13,7 +13,7 @@ header:
 tags: [denmark, copenhagen, travel]
 ---
 
-## June in Copenhagen
+<img src="/assets/images/history/denmark/copenhagen/june/summit2.jpg" alt="Perfusion Summit Copenhagen">
 
 6월의 덴마크는 하루가 유난히 길다.  
 이번 코펜하겐은 여행이라기보다는,  
@@ -45,10 +45,7 @@ Cercare-Medical 2024 Perfusion Summit에 참석하기 위해
 회사에 소속된 한국인 분과도 인사를 나눌 수 있어서  
 괜히 더 마음이 놓였던 하루.
 
-<div class="image-grid-2">
-  <img src="/assets/images/history/denmark/copenhagen/june/summit1.jpg" alt="Perfusion Summit banner">
-  <img src="/assets/images/history/denmark/copenhagen/june/summit2.jpg" alt="Perfusion Summit Copenhagen">
-</div>
+<img src="/assets/images/history/denmark/copenhagen/june/summit1.jpg" alt="Perfusion Summit banner">
 
 짐을 풀기 위해 도미토리 형태의 숙소에 체크인하고  
 잠깐 숨 돌린 뒤, 곧바로 시내로 나왔다.
