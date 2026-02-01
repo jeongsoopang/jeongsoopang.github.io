@@ -12,15 +12,54 @@ sidebar:
 
 {% comment %}
   Home sections:
-  1) Recent Posts: latest 3
-  2) Notes: latest 1 (category: notes)
-  3) Life: latest 2 (category: life)
+  0) History: latest 4 (category: history)  -> GRID cards
+  1) Recent Posts: latest 3                -> LIST
+  2) Notes: latest 1 (category: notes)     -> LIST
+  3) Life: latest 2 (category: life)       -> LIST
   - Uses Minimal Mistakes include: archive-single.html
 {% endcomment %}
 
 <div class="home-compact">
 
-  {% assign recent_posts = site.posts | slice: 0, 3 %}
+  {% comment %}
+    History (latest 4) - category: history
+    Force sorting by date desc for safety
+  {% endcomment %}
+
+  {% assign all_posts_sorted = site.posts | sort: "date" | reverse %}
+
+  {% assign history_posts = "" | split: "" %}
+  {% for p in all_posts_sorted %}
+    {% assign cats = p.categories | join: " " | downcase %}
+    {% if cats contains "history" %}
+      {% assign history_posts = history_posts | push: p %}
+    {% endif %}
+  {% endfor %}
+  {% assign history_latest = history_posts | slice: 0, 4 %}
+
+  <h2 style="margin-top: 0;">History</h2>
+
+  {% if history_latest.size > 0 %}
+    <div class="entries-grid">
+      {% for post in history_latest %}
+        {% include archive-single.html type="grid" %}
+      {% endfor %}
+    </div>
+
+    <p style="margin: 0.4rem 0 0;">
+      <a href="{{ '/history/' | relative_url }}">→ View all History</a>
+    </p>
+  {% else %}
+    <p style="color: rgba(0,0,0,0.6);">No history posts yet.</p>
+  {% endif %}
+
+  <hr style="margin: 2rem 0;">
+
+  {% comment %}
+    Recent Posts (latest 3) - overall
+  {% endcomment %}
+
+  {% assign recent_posts = all_posts_sorted | slice: 0, 3 %}
 
   <h2 style="margin-top: 0;">Recent Posts</h2>
   <div class="entries-list">
@@ -36,7 +75,7 @@ sidebar:
   {% endcomment %}
 
   {% assign notes_posts = "" | split: "" %}
-  {% for p in site.posts %}
+  {% for p in all_posts_sorted %}
     {% assign cats = p.categories | join: " " | downcase %}
     {% if cats contains "notes" %}
       {% assign notes_posts = notes_posts | push: p %}
@@ -62,7 +101,7 @@ sidebar:
   {% endcomment %}
 
   {% assign life_posts = "" | split: "" %}
-  {% for p in site.posts %}
+  {% for p in all_posts_sorted %}
     {% assign cats = p.categories | join: " " | downcase %}
     {% if cats contains "life" %}
       {% assign life_posts = life_posts | push: p %}
