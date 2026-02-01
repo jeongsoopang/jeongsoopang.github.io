@@ -12,21 +12,20 @@ sidebar:
 
 {% comment %}
   Home sections:
-  0) History: latest 4 (category: history)  -> GRID cards
-  1) Recent Posts: latest 3                -> LIST
-  2) Notes: latest 1 (category: notes)     -> LIST
-  3) Life: latest 2 (category: life)       -> LIST
+  0) History (pinned 4) - June Copenhagen / Porvoo / Helsinki / Lapland (grid cards)
+  1) Recent Posts: latest 3
+  2) Notes: latest 1 (category: notes)
+  3) Life: latest 2 (category: life)
   - Uses Minimal Mistakes include: archive-single.html
 {% endcomment %}
 
 <div class="home-compact">
 
   {% comment %}
-    History (pinned 4 posts) - force showing exactly:
-    Hamburg, Porvoo, Helsinki, Lapland
+    History (Pinned 4 posts) — fixed order left->right
   {% endcomment %}
 
-  {% assign pinned_urls = "/history/germany/hamburg/|/history/finland/porvoo/|/history/finland/helsinki/|/history/finland/lapland/" | split: "|" %}
+  {% assign pinned_urls = "/history/june-copenhagen/|/history/porvoo/|/history/helsinki/|/history/lapland/" | split: "|" %}
 
   {% assign pinned_posts = "" | split: "" %}
   {% for u in pinned_urls %}
@@ -36,30 +35,27 @@ sidebar:
     {% endif %}
   {% endfor %}
 
-<h2 style="margin-top: 0;">History</h2>
+  <h2 style="margin-top: 0;">History</h2>
 
-{% if pinned_posts.size > 0 %}
-  <div class="entries-grid">
-    {% for post in pinned_posts %}
-      {% include archive-single.html type="grid" post=post %}
-    {% endfor %}
-  </div>
+  {% if pinned_posts.size > 0 %}
+    <div class="entries-grid">
+      {% for post in pinned_posts %}
+        {% include archive-single.html type="grid" post=post %}
+      {% endfor %}
+    </div>
 
-  <p style="margin: 0.4rem 0 0;">
-    <a href="{{ '/history/' | relative_url }}">→ View all History</a>
-  </p>
-{% else %}
-  <p style="color: rgba(0,0,0,0.6);">Pinned history posts not found. Check permalinks/urls.</p>
-{% endif %}
-
+    <p style="margin: 0.4rem 0 0;">
+      <a href="{{ '/history/' | relative_url }}">→ View all History</a>
+    </p>
+  {% else %}
+    <p style="color: rgba(0,0,0,0.6);">
+      Pinned history posts not found. Check each post URL/permalink and update pinned_urls.
+    </p>
+  {% endif %}
 
   <hr style="margin: 2rem 0;">
 
-  {% comment %}
-    Recent Posts (latest 3) - overall
-  {% endcomment %}
-
-  {% assign recent_posts = all_posts_sorted | slice: 0, 3 %}
+  {% assign recent_posts = site.posts | slice: 0, 3 %}
 
   <h2 style="margin-top: 0;">Recent Posts</h2>
   <div class="entries-list">
@@ -75,7 +71,7 @@ sidebar:
   {% endcomment %}
 
   {% assign notes_posts = "" | split: "" %}
-  {% for p in all_posts_sorted %}
+  {% for p in site.posts %}
     {% assign cats = p.categories | join: " " | downcase %}
     {% if cats contains "notes" %}
       {% assign notes_posts = notes_posts | push: p %}
@@ -101,7 +97,7 @@ sidebar:
   {% endcomment %}
 
   {% assign life_posts = "" | split: "" %}
-  {% for p in all_posts_sorted %}
+  {% for p in site.posts %}
     {% assign cats = p.categories | join: " " | downcase %}
     {% if cats contains "life" %}
       {% assign life_posts = life_posts | push: p %}
