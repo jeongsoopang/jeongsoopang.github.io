@@ -22,36 +22,36 @@ sidebar:
 <div class="home-compact">
 
   {% comment %}
-    History (latest 4) - category: history
-    Force sorting by date desc for safety
+    History (pinned 4 posts) - force showing exactly:
+    Hamburg, Porvoo, Helsinki, Lapland
   {% endcomment %}
 
-  {% assign all_posts_sorted = site.posts | sort: "date" | reverse %}
+  {% assign pinned_urls = "/history/germany/hamburg/|/history/finland/porvoo/|/history/finland/helsinki/|/history/finland/lapland/" | split: "|" %}
 
-  {% assign history_posts = "" | split: "" %}
-  {% for p in all_posts_sorted %}
-    {% assign cats = p.categories | join: " " | downcase %}
-    {% if cats contains "history" %}
-      {% assign history_posts = history_posts | push: p %}
+  {% assign pinned_posts = "" | split: "" %}
+  {% for u in pinned_urls %}
+    {% assign found = site.posts | where: "url", u | first %}
+    {% if found %}
+      {% assign pinned_posts = pinned_posts | push: found %}
     {% endif %}
   {% endfor %}
-  {% assign history_latest = history_posts | slice: 0, 4 %}
 
-  <h2 style="margin-top: 0;">History</h2>
+<h2 style="margin-top: 0;">History</h2>
 
-  {% if history_latest.size > 0 %}
-    <div class="entries-grid">
-      {% for post in history_latest %}
-        {% include archive-single.html type="grid" %}
-      {% endfor %}
-    </div>
+{% if pinned_posts.size > 0 %}
+  <div class="entries-grid">
+    {% for post in pinned_posts %}
+      {% include archive-single.html type="grid" post=post %}
+    {% endfor %}
+  </div>
 
-    <p style="margin: 0.4rem 0 0;">
-      <a href="{{ '/history/' | relative_url }}">→ View all History</a>
-    </p>
-  {% else %}
-    <p style="color: rgba(0,0,0,0.6);">No history posts yet.</p>
-  {% endif %}
+  <p style="margin: 0.4rem 0 0;">
+    <a href="{{ '/history/' | relative_url }}">→ View all History</a>
+  </p>
+{% else %}
+  <p style="color: rgba(0,0,0,0.6);">Pinned history posts not found. Check permalinks/urls.</p>
+{% endif %}
+
 
   <hr style="margin: 2rem 0;">
 
