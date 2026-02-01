@@ -1,4 +1,4 @@
-<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+<button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
   ↑
 </button>
 
@@ -7,17 +7,16 @@
     const btn = document.getElementById("back-to-top");
     if (!btn) return;
 
-    const showAfter = 300; // px
-
-    function onScroll() {
-      if (window.scrollY > showAfter) btn.classList.add("is-visible");
+    const toggle = () => {
+      // 250px 이상 스크롤하면 나타나게
+      if (window.scrollY > 250) btn.classList.add("is-visible");
       else btn.classList.remove("is-visible");
-    }
+    };
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+    window.addEventListener("scroll", toggle, { passive: true });
+    toggle();
 
-    btn.addEventListener("click", function () {
+    btn.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   })();
