@@ -579,3 +579,44 @@ body.home-page .home-compact h2 + .entries-list {
   object-position: center 30% !important; /* 인물 사진 위쪽 더 살림 */
 }
 
+/* ===============================
+   Back to top (mobile friendly)
+   =============================== */
+.back-to-top {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+
+  font-size: 18px;
+  line-height: 44px;
+  text-align: center;
+
+  cursor: pointer;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* desktop에서는 너무 거슬리면 숨기고, 모바일/태블릿에서만 보이게 */
+@media (min-width: 1024px) {
+  .back-to-top {
+    display: none;
+  }
+}
