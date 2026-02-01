@@ -1,22 +1,22 @@
-<button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
-  ↑
+<!-- _includes/back-to-top.html -->
+<button id="back-to-top" type="button" aria-label="Back to top">
+  ↑ Top
 </button>
 
 <script>
   (function () {
-    const btn = document.getElementById("back-to-top");
+    var btn = document.getElementById("back-to-top");
     if (!btn) return;
 
-    const toggle = () => {
-      // 250px 이상 스크롤하면 나타나게
-      if (window.scrollY > 250) btn.classList.add("is-visible");
+    function toggle() {
+      if (window.scrollY > 400) btn.classList.add("is-visible");
       else btn.classList.remove("is-visible");
-    };
+    }
 
     window.addEventListener("scroll", toggle, { passive: true });
-    toggle();
+    window.addEventListener("load", toggle);
 
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   })();
