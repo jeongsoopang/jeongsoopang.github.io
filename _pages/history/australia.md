@@ -1,8 +1,11 @@
 ---
-title: "🇦🇺 Australia"
-layout: single
+title: Australia
 permalink: /history/australia/
-author_profile: false
+layout: single
+classes: wide
+author_profile: true
+sidebar:
+  nav: "history"
 ---
 
 <div class="card-grid">
@@ -11,7 +14,6 @@ author_profile: false
     <img src="/assets/images/history/australia/canberra/cover.jpg">
     <div class="card-content">
       <h3>Canberra</h3>
-      <p>The quiet capital surrounded by nature</p>
     </div>
   </a>
 
@@ -19,7 +21,6 @@ author_profile: false
     <img src="/assets/images/history/australia/merimbula/cover.jpg">
     <div class="card-content">
       <h3>Merimbula</h3>
-      <p>Hidden coastal gem with crystal water</p>
     </div>
   </a>
 
@@ -27,7 +28,6 @@ author_profile: false
     <img src="/assets/images/history/australia/sydney/cover.jpg">
     <div class="card-content">
       <h3>Sydney</h3>
-      <p>Harbour city full of life</p>
     </div>
   </a>
 
