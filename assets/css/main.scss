@@ -659,8 +659,13 @@ body.home-page .home-compact h2 + .entries-list {
 .youtube-wrap {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; // 16:9
+  padding-top: 56.25%; // 16:9 (가로 영상)
   margin: 1rem 0 1.5rem;
+}
+
+.youtube-wrap.youtube-vertical {
+  padding-top: 177.78%; // 9:16 (Shorts/세로 영상)
+  max-width: 520px;     // 너무 길게 늘어지는 것 방지
 }
 
 .youtube-wrap iframe {
@@ -670,5 +675,6 @@ body.home-page .home-compact h2 + .entries-list {
   height: 100%;
   border-radius: 12px;
 }
+
 
 
