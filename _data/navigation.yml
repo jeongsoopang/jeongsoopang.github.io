@@ -25,6 +25,8 @@ history:
         url: /history/de/
       - title: "Japan"
         url: /history/jp/
+      - title: Australia
+        url: /history/australia
 
 sidebar:
   - title: "DEVELOPMENT"
