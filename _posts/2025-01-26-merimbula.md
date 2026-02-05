@@ -6,7 +6,7 @@ city: "🇦🇺 Merimbula"
 lat: -36.8890
 lng: 149.9090
 cover: /assets/images/history/australia/merimbula/cover.jpg
-excerpt: "Hidden coastal gem with crystal water"
+excerpt: "2025-01-26"
 header:
   teaser: /assets/images/history/australia/merimbula/cover.jpg
 tags: [australia, merimbula, travel]
