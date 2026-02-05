@@ -1,5 +1,5 @@
 ---
-title: "Australia"
+title: "🇦🇺 Australia"
 layout: single
 permalink: /history/australia/
 author_profile: false
