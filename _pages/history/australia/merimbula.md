@@ -1,3 +1,4 @@
+
 ---
 title: Merimbula
 permalink: /history/australia/merimbula/
