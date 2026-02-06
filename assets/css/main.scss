@@ -676,5 +676,21 @@ body.home-page .home-compact h2 + .entries-list {
   border-radius: 12px;
 }
 
+figure.third {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+figure.third img {
+  flex: 1 1 calc(33.333% - 10px);
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  figure.third img {
+    flex: 1 1 100%;
+  }
+}
 
 
