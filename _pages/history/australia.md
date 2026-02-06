@@ -1,5 +1,5 @@
 ---
-title: Australia
+title: Australia 🇦🇺
 permalink: /history/australia/
 layout: single
 classes: wide
@@ -8,27 +8,35 @@ sidebar:
   nav: "history"
 ---
 
-<div class="card-grid">
+<div class="history-country-layout">
 
-  <a class="card" href="/history/australia/canberra/">
-    <img src="/assets/images/history/australia/canberra/cover.jpg">
-    <div class="card-content">
-      <h3>Canberra</h3>
-    </div>
-  </a>
+  <div class="history-country-left">
+    {% include history/post-cards-by-country.html country="AU" %}
+  </div>
 
-  <a class="card" href="/history/australia/merimbula/">
-    <img src="/assets/images/history/australia/merimbula/cover.jpg">
-    <div class="card-content">
-      <h3>Merimbula</h3>
-    </div>
-  </a>
-
-  <a class="card" href="/history/australia/sydney/">
-    <img src="/assets/images/history/australia/sydney/cover.jpg">
-    <div class="card-content">
-      <h3>Sydney</h3>
-    </div>
-  </a>
+  <div class="history-country-right">
+    <div id="history-country-map"></div>
+    <p style="color:#666; font-size: 0.9rem; margin-top: 0.5rem;">
+      Pins are places I visited. Hover a card to focus the pin. Click a pin to open the post.
+    </p>
+  </div>
 
 </div>
+
+<script>
+  window.HISTORY_POINTS = [
+    {% for p in site.posts %}
+      {% if p.country == "AU" %}
+        {
+          title: {{ p.title | jsonify }},
+          url: {{ p.url | relative_url | jsonify }},
+          city: {{ p.city | jsonify }},
+          lat: {{ p.lat }},
+          lng: {{ p.lng }}
+        }{% unless forloop.last %},{% endunless %}
+      {% endif %}
+    {% endfor %}
+  ];
+</script>
+
+<script src="{{ '/assets/js/history-country-map.js' | relative_url }}"></script>
