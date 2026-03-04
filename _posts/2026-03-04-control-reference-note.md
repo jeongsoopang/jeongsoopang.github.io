@@ -287,7 +287,7 @@ $$
 
 ## Problem: Chattering
 
-SMC는 다음 문제가 있다.
+SMC는 다음과 같은 문제 존재.
 
 ```
 Trajectory Planner
