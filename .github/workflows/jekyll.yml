@@ -16,12 +16,15 @@ concurrency:
 
 jobs:
   build:
-    # push일 때는 커밋 메시지에 [deploy]가 있을 때만 실행
-    # workflow_dispatch(수동 실행)일 때는 항상 실행
-    if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[deploy]') }}
+    name: Build Jekyll
     runs-on: ubuntu-latest
+
+    # push일 때는 commit message에 [deploy] 있을 때만 실행
+    # workflow_dispatch는 항상 실행
+    if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[deploy]') }}
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Ruby
@@ -30,28 +33,37 @@ jobs:
           ruby-version: "3.2"
           bundler-cache: true
 
-      - name: Setup Pages
+      - name: Setup GitHub Pages
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Build with Jekyll
+      - name: Build site with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
 
-      - name: Upload artifact
+      - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
 
   deploy:
-    if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[deploy]') }}
-    runs-on: ubuntu-latest
+    name: Deploy to GitHub Pages
     needs: build
+    runs-on: ubuntu-latest
+
+    # build와 동일 조건
+    if: ${{ github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[deploy]') }}
+
+    permissions:
+      pages: write
+      id-token: write
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy site
         id: deployment
         uses: actions/deploy-pages@v4
